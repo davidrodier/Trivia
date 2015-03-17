@@ -189,7 +189,7 @@ namespace TP2_jeuQuiz
               }
               else if (SpinValeur == 3)
               {
-                  PNL_CouleurCategorie.BackColor = Color.Lime;
+                  PNL_CouleurCategorie.BackColor = Color.Green;
               }
               else if (SpinValeur == 4)
               {
@@ -205,18 +205,14 @@ namespace TP2_jeuQuiz
 
 
           // Check si la couleur obtenue est le blanc
-          if (PNL_CouleurCategorie.BackColor.B == 255
-              && PNL_CouleurCategorie.BackColor.R == 255
-              && PNL_CouleurCategorie.BackColor.G == 255)
+          if (PNL_CouleurCategorie.BackColor == Color.White)
           {
               GB_ChoixCat.Enabled = true;
 
               // Faut attendre que la catégorie soit choisie
 
           }
-          else if (PNL_CouleurCategorie.BackColor.B == 255
-              && PNL_CouleurCategorie.BackColor.R == 0
-              && PNL_CouleurCategorie.BackColor.G == 0)
+          else if (PNL_CouleurCategorie.BackColor == Color.Blue)
           { 
                // Couleur bleue, catégorie des sports 
               GetQuestion();
@@ -225,9 +221,7 @@ namespace TP2_jeuQuiz
               GB_Question.Enabled = true;
 
           }
-          else if (PNL_CouleurCategorie.BackColor.B == 0
-              && PNL_CouleurCategorie.BackColor.R == 255
-              && PNL_CouleurCategorie.BackColor.G == 255)
+          else if (PNL_CouleurCategorie.BackColor == Color.Yellow)
           { 
                 // Couleur Jaune, catég de l'histoire
               GetQuestion();
@@ -235,9 +229,7 @@ namespace TP2_jeuQuiz
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
           }
-          else if (PNL_CouleurCategorie.BackColor.B == 0
-              && PNL_CouleurCategorie.BackColor.R == 0
-              && PNL_CouleurCategorie.BackColor.G == 255)
+          else if (PNL_CouleurCategorie.BackColor == Color.Green)
           { 
                 // Vert, couleur de la géographie
               GetQuestion();
@@ -245,9 +237,7 @@ namespace TP2_jeuQuiz
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
           }
-          else if (PNL_CouleurCategorie.BackColor.B == 0
-              && PNL_CouleurCategorie.BackColor.R == 255
-              && PNL_CouleurCategorie.BackColor.G == 0)
+          else if (PNL_CouleurCategorie.BackColor == Color.Red)
           { 
             // Rouge, la couleur de l'art & de la culture
               GetQuestion();
