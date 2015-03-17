@@ -336,6 +336,7 @@
             this.RB_Choix4.TabStop = true;
             this.RB_Choix4.Text = "Choix #4";
             this.RB_Choix4.UseVisualStyleBackColor = true;
+            this.RB_Choix4.CheckedChanged += new System.EventHandler(this.RB_Choix4_CheckedChanged);
             // 
             // RB_Choix3
             // 
@@ -347,6 +348,7 @@
             this.RB_Choix3.TabStop = true;
             this.RB_Choix3.Text = "Choix #3";
             this.RB_Choix3.UseVisualStyleBackColor = true;
+            this.RB_Choix3.CheckedChanged += new System.EventHandler(this.RB_Choix3_CheckedChanged);
             // 
             // RB_Choix2
             // 
@@ -358,6 +360,7 @@
             this.RB_Choix2.TabStop = true;
             this.RB_Choix2.Text = "Choix #2";
             this.RB_Choix2.UseVisualStyleBackColor = true;
+            this.RB_Choix2.CheckedChanged += new System.EventHandler(this.RB_Choix2_CheckedChanged);
             // 
             // RB_Choix1
             // 
@@ -369,6 +372,7 @@
             this.RB_Choix1.TabStop = true;
             this.RB_Choix1.Text = "Choix #1";
             this.RB_Choix1.UseVisualStyleBackColor = true;
+            this.RB_Choix1.CheckedChanged += new System.EventHandler(this.RB_Choix1_CheckedChanged);
             // 
             // BTN_ProchainTour
             // 

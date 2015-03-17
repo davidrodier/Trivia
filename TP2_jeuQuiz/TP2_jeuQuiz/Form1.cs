@@ -268,6 +268,10 @@ namespace TP2_jeuQuiz
           GB_ChoixCat.Enabled = false;
           Thread.Sleep(250);
           GB_ChoixCat.Hide();
+          GetQuestion("SPR");
+
+          GB_ChoixDeReponses.Enabled = true;
+          GB_Question.Enabled = true;
       }
 
       private void RB_Histoire_CheckedChanged(object sender, EventArgs e)
@@ -275,6 +279,10 @@ namespace TP2_jeuQuiz
           GB_ChoixCat.Enabled = false;
           Thread.Sleep(250);
           GB_ChoixCat.Hide();
+          GetQuestion("HIS");
+
+          GB_ChoixDeReponses.Enabled = true;
+          GB_Question.Enabled = true;
       }
 
       private void RB_Geographie_CheckedChanged(object sender, EventArgs e)
@@ -282,6 +290,10 @@ namespace TP2_jeuQuiz
           GB_ChoixCat.Enabled = false;
           Thread.Sleep(250);
           GB_ChoixCat.Hide();
+          GetQuestion("GEO");
+
+          GB_ChoixDeReponses.Enabled = true;
+          GB_Question.Enabled = true;
       }
 
       private void RB_ArtCulture_CheckedChanged(object sender, EventArgs e)
@@ -289,6 +301,34 @@ namespace TP2_jeuQuiz
           GB_ChoixCat.Enabled = false;
           Thread.Sleep(250);
           GB_ChoixCat.Hide();
+          GetQuestion("ART");
+
+          GB_ChoixDeReponses.Enabled = true;
+          GB_Question.Enabled = true;
+      }
+
+      private void RB_Choix1_CheckedChanged(object sender, EventArgs e)
+      {
+          // Choix de réponse 1
+
+      }
+
+      private void RB_Choix2_CheckedChanged(object sender, EventArgs e)
+      {
+          // Choix de réponse 2
+
+      }
+
+      private void RB_Choix3_CheckedChanged(object sender, EventArgs e)
+      {
+          // Choix de réponse 3
+
+      }
+
+      private void RB_Choix4_CheckedChanged(object sender, EventArgs e)
+      {
+          // Choix de réponse 4
+
       }
    }
 }
