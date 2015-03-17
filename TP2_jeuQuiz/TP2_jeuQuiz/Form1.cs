@@ -225,10 +225,8 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Blue)
           { 
                // Couleur bleue, catégorie des sports 
-<<<<<<< HEAD
-=======
+
               GetQuestion("SPR");
->>>>>>> origin/master
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
@@ -237,10 +235,8 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Yellow)
           { 
                 // Couleur Jaune, catég de l'histoire
-<<<<<<< HEAD
-=======
+
               GetQuestion("HIS");
->>>>>>> origin/master
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
@@ -248,10 +244,8 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Lime)
           { 
                 // Vert, couleur de la géographie
-<<<<<<< HEAD
-=======
+
               GetQuestion("GEO");
->>>>>>> origin/master
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
@@ -259,16 +253,14 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Red)
           { 
             // Rouge, la couleur de l'art & de la culture
-<<<<<<< HEAD
-=======
+
               GetQuestion("ART");
->>>>>>> origin/master
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
 
           }
-          GetQuestion();
+          //GetQuestion();
       }
 
       private void RB_Sport_CheckedChanged(object sender, EventArgs e)
