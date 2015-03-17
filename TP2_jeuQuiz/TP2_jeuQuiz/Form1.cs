@@ -63,37 +63,39 @@ namespace TP2_jeuQuiz
 
       private void nouvellePartieToolStripMenuItem_Click(object sender, EventArgs e)
       {
-          NouvellePartie FenetreNouvellePartie = new NouvellePartie();
-          FenetreNouvellePartie.ShowDialog();
+         NouvellePartie FenetreNouvellePartie = new NouvellePartie();
 
-         string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
-                  "(HOST=205.237.244.251)(PORT=1521)))" + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
-         string ChaineConnexion = "Data Source = " + Dsource + ";User Id =" + "Labontel" + "; Password =" + "ORACLE1";
-
-         try
+         if (FenetreNouvellePartie.ShowDialog() == System.Windows.Forms.DialogResult.OK)
          {
-            OraConn.ConnectionString = ChaineConnexion;
-            OraConn.Open();
+            string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
+                     "(HOST=205.237.244.251)(PORT=1521)))" + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
+            string ChaineConnexion = "Data Source = " + Dsource + ";User Id =" + "Labontel" + "; Password =" + "ORACLE1";
 
-            if (OraConn.State.ToString() == "Open")
+            try
             {
-               MessageBox.Show("Connecté");
+               OraConn.ConnectionString = ChaineConnexion;
+               OraConn.Open();
+
+               if (OraConn.State.ToString() == "Open")
+               {
+                  MessageBox.Show("Connecté");
+               }
+               else
+               {
+                  MessageBox.Show(OraConn.State.ToString());
+               }
             }
-            else
+            catch (Exception ex)
             {
-               MessageBox.Show(OraConn.State.ToString());
+               MessageBox.Show(ex.Message.ToString());
             }
-         }
-         catch (Exception ex)
-         {
-            MessageBox.Show(ex.Message.ToString());
          }
       }
 
       private void panneauDadministrationToolStripMenuItem_Click(object sender, EventArgs e)
       {
-          Administration FenetreAdmin = new Administration();
-          FenetreAdmin.ShowDialog();
+         Administration FenetreAdmin = new Administration();
+         FenetreAdmin.ShowDialog();
       }
 
       private void Form1_Load(object sender, EventArgs e)
@@ -103,8 +105,35 @@ namespace TP2_jeuQuiz
 
       private void effacerUnJoueurToolStripMenuItem_Click(object sender, EventArgs e)
       {
-          EffacerJoueur FenetreEffacerJoueur = new EffacerJoueur();
-          FenetreEffacerJoueur.ShowDialog();
+         EffacerJoueur FenetreEffacerJoueur = new EffacerJoueur();
+         FenetreEffacerJoueur.ShowDialog();
+      }
+
+      private void GetQuestion()
+      {
+         Random rdm = new Random();
+
+         OracleCommand oraSelect = new OracleCommand("GESTIONJEU", OraConn);
+         oraSelect.CommandText = "GESTIONJEU.SELECTQUESTION";
+         oraSelect.CommandType = CommandType.StoredProcedure;
+
+         OracleParameter oraNum = new OracleParameter("PNUM", OracleDbType.Int32);
+         oraNum.Direction = ParameterDirection.Input;
+         oraNum.Value = rdm.Next();
+         oraSelect.Parameters.Add(oraNum);
+
+         OracleParameter oraCursor = new OracleParameter("PPRIX", OracleDbType.RefCursor);
+         oraCursor.Direction = ParameterDirection.ReturnValue;
+         oraSelect.Parameters.Add(oraCursor);
+
+
+         OracleDataAdapter orAdater = new OracleDataAdapter(oraSelect);
+         if (MonDataSet.Tables.Contains("Question"))
+         {
+            MonDataSet.Tables["Question"].Clear();
+         }
+         orAdater.Fill(MonDataSet, "Question");
+         oraSelect.Dispose();
       }
    }
 }

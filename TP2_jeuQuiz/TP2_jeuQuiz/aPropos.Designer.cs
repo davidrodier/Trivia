@@ -37,12 +37,12 @@
          // 
          // LBL_TexteInfo
          // 
-         this.LBL_TexteInfo.Location = new System.Drawing.Point(12, 186);
+         this.LBL_TexteInfo.Location = new System.Drawing.Point(12, 182);
          this.LBL_TexteInfo.Name = "LBL_TexteInfo";
-         this.LBL_TexteInfo.Size = new System.Drawing.Size(192, 31);
+         this.LBL_TexteInfo.Size = new System.Drawing.Size(192, 65);
          this.LBL_TexteInfo.TabIndex = 0;
-         this.LBL_TexteInfo.Text = "Par Alexandre-Xavier Labonté-Lamoureux et David Rodier";
-         this.LBL_TexteInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+         this.LBL_TexteInfo.Text = "Par\r\nAlexandre-Xavier Labonté-Lamoureux\r\net \r\nDavid Rodier";
+         this.LBL_TexteInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // PN_Quiz
          // 
@@ -68,7 +68,7 @@
          // 
          this.BTN_Fermer.DialogResult = System.Windows.Forms.DialogResult.OK;
          this.BTN_Fermer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-         this.BTN_Fermer.Location = new System.Drawing.Point(68, 236);
+         this.BTN_Fermer.Location = new System.Drawing.Point(68, 254);
          this.BTN_Fermer.Name = "BTN_Fermer";
          this.BTN_Fermer.Size = new System.Drawing.Size(75, 23);
          this.BTN_Fermer.TabIndex = 3;
