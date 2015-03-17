@@ -70,9 +70,11 @@
             this.TB_AliasSupprimer.Name = "TB_AliasSupprimer";
             this.TB_AliasSupprimer.Size = new System.Drawing.Size(100, 20);
             this.TB_AliasSupprimer.TabIndex = 3;
+            this.TB_AliasSupprimer.TextChanged += new System.EventHandler(this.TB_AliasSupprimer_TextChanged);
             // 
             // BTN_Suprimer
             // 
+            this.BTN_Suprimer.Enabled = false;
             this.BTN_Suprimer.Location = new System.Drawing.Point(86, 164);
             this.BTN_Suprimer.Name = "BTN_Suprimer";
             this.BTN_Suprimer.Size = new System.Drawing.Size(100, 39);

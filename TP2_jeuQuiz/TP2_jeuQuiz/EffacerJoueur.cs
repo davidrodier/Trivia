@@ -20,8 +20,21 @@ namespace TP2_jeuQuiz
         private void BTN_Suprimer_Click(object sender, EventArgs e)
         {
             // Commande qui efface le joueur et ses données à partir de son alias (TB_AliasSupprimer)
+            // La procedure devrait faire un message d'erreur si le joueur n'existe pas
 
+        }
 
+        private void TB_AliasSupprimer_TextChanged(object sender, EventArgs e)
+        {
+            // Si la boîte est vide, on peut pas supprimer...
+            if (TB_AliasSupprimer.Text.ToString().Length > 0)
+            {
+                BTN_Suprimer.Enabled = true;
+            }
+            else
+            {
+                BTN_Suprimer.Enabled = false;
+            }
         }
     }
 }
