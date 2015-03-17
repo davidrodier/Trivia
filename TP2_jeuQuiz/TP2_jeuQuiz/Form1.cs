@@ -143,7 +143,7 @@ namespace TP2_jeuQuiz
          FenetreEffacerJoueur.ShowDialog();
       }
 
-      private void GetQuestion()
+      private void GetQuestion(String Categorie)
       {
          Random rdm = new Random();
 
@@ -155,10 +155,10 @@ namespace TP2_jeuQuiz
          oraCursor.Direction = ParameterDirection.ReturnValue;
          oraSelect.Parameters.Add(oraCursor);
 
-         OracleParameter oraNum = new OracleParameter("NUMERODEQUESTION", OracleDbType.Int32);
-         oraNum.Direction = ParameterDirection.Input;
-         oraNum.Value = rdm.Next(1, 30);
-         oraSelect.Parameters.Add(oraNum);
+         OracleParameter oraCat = new OracleParameter("CATEGORIE", OracleDbType.Char, 3);
+         oraCat.Direction = ParameterDirection.Input;
+         oraCat.Value = Categorie;
+         oraSelect.Parameters.Add(oraCat);
 
          OracleDataAdapter orAdater = new OracleDataAdapter(oraSelect);
          if (MonDataSet.Tables.Contains("Question"))
@@ -225,6 +225,10 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Blue)
           { 
                // Couleur bleue, catégorie des sports 
+<<<<<<< HEAD
+=======
+              GetQuestion("SPR");
+>>>>>>> origin/master
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
@@ -233,6 +237,10 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Yellow)
           { 
                 // Couleur Jaune, catég de l'histoire
+<<<<<<< HEAD
+=======
+              GetQuestion("HIS");
+>>>>>>> origin/master
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
@@ -240,6 +248,10 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Lime)
           { 
                 // Vert, couleur de la géographie
+<<<<<<< HEAD
+=======
+              GetQuestion("GEO");
+>>>>>>> origin/master
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
@@ -247,6 +259,10 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Red)
           { 
             // Rouge, la couleur de l'art & de la culture
+<<<<<<< HEAD
+=======
+              GetQuestion("ART");
+>>>>>>> origin/master
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
