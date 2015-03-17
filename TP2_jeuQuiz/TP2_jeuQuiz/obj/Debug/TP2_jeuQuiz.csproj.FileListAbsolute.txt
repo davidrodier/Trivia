@@ -50,3 +50,17 @@ C:\Users\Alexandre-Xavier\Documents\GitHub\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\De
 C:\Users\Alexandre-Xavier\Documents\GitHub\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.NouvellePartie.resources
 C:\Users\Alexandre-Xavier\Documents\GitHub\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.Properties.Resources.resources
 C:\Users\Alexandre-Xavier\Documents\GitHub\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.csproj.GenerateResource.Cache
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\bin\Debug\TP2_jeuQuiz.exe.config
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.exe
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.pdb
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\bin\Debug\TP2_jeuQuiz.exe
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\bin\Debug\TP2_jeuQuiz.pdb
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\bin\Debug\Oracle.DataAccess.dll
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.csprojResolveAssemblyReference.cache
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.Administration.resources
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.aPropos.resources
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.EffacerJoueur.resources
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.Form1.resources
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.NouvellePartie.resources
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.Properties.Resources.resources
+C:\Users\david\Desktop\Trivia\TP2_jeuQuiz\TP2_jeuQuiz\obj\Debug\TP2_jeuQuiz.csproj.GenerateResource.Cache
