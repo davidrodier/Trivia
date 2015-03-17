@@ -13,6 +13,7 @@ namespace TP2_jeuQuiz
    public partial class NouvellePartie : Form
    {
        public int NombreJoueurs = 0;
+       public bool Reprise = false;
 
       public NouvellePartie()
       {
@@ -137,6 +138,11 @@ namespace TP2_jeuQuiz
       private void TB_AliasJ4_TextChanged(object sender, EventArgs e)
       {
           CheckToEnableCommencer();
+      }
+
+      private void CB_Reprise_CheckedChanged(object sender, EventArgs e)
+      {
+          Reprise = CB_Reprise.Enabled;
       }
    }
 }

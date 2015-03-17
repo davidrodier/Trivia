@@ -57,6 +57,7 @@
             this.CB_Reprise.TabIndex = 0;
             this.CB_Reprise.Text = "Reprendre la partie d\'après les scores laissés dans le profil des joueurs";
             this.CB_Reprise.UseVisualStyleBackColor = true;
+            this.CB_Reprise.CheckedChanged += new System.EventHandler(this.CB_Reprise_CheckedChanged);
             // 
             // GB_NombreDeJoueurs
             // 

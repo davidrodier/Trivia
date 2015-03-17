@@ -96,10 +96,23 @@ namespace TP2_jeuQuiz
             GB_Question.Enabled = true;
             BTN_ProchainTour.Enabled = true;
 
-            GetQuestion();
+           // On a deux choix, remettre à noeuf la table d'un joueur pour commencer une partie à zéro
+            if (FenetreNouvellePartie.Reprise == false)
+            { 
+            
+            }
+
+             // Ou on reprend avec ses anciens scores
+            if (FenetreNouvellePartie.Reprise == true)
+            {
+
+            }
+
 
              // Aller chercher le nombre de joeurs qu'il y a dans l'autre Form
             NombreJoueurs = FenetreNouvellePartie.NombreJoueurs;
+
+            GetQuestion();
          }
       }
 
