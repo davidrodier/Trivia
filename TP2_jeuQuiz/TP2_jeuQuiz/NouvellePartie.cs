@@ -22,6 +22,8 @@ namespace TP2_jeuQuiz
       public NouvellePartie()
       {
          InitializeComponent();
+
+         RB_NJ1.Checked = true;
       }
 
       private void textBox1_TextChanged(object sender, EventArgs e)

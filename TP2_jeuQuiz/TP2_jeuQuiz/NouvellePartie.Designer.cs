@@ -79,7 +79,6 @@
             this.RB_NJ4.Name = "RB_NJ4";
             this.RB_NJ4.Size = new System.Drawing.Size(94, 17);
             this.RB_NJ4.TabIndex = 3;
-            this.RB_NJ4.TabStop = true;
             this.RB_NJ4.Text = "Quatre joueurs";
             this.RB_NJ4.UseVisualStyleBackColor = true;
             this.RB_NJ4.CheckedChanged += new System.EventHandler(this.RB_NJ4_CheckedChanged);
@@ -91,7 +90,6 @@
             this.RB_NJ3.Name = "RB_NJ3";
             this.RB_NJ3.Size = new System.Drawing.Size(85, 17);
             this.RB_NJ3.TabIndex = 2;
-            this.RB_NJ3.TabStop = true;
             this.RB_NJ3.Text = "Trois joueurs";
             this.RB_NJ3.UseVisualStyleBackColor = true;
             this.RB_NJ3.CheckedChanged += new System.EventHandler(this.RB_NJ3_CheckedChanged);
@@ -103,7 +101,6 @@
             this.RB_NJ2.Name = "RB_NJ2";
             this.RB_NJ2.Size = new System.Drawing.Size(87, 17);
             this.RB_NJ2.TabIndex = 1;
-            this.RB_NJ2.TabStop = true;
             this.RB_NJ2.Text = "Deux joueurs";
             this.RB_NJ2.UseVisualStyleBackColor = true;
             this.RB_NJ2.CheckedChanged += new System.EventHandler(this.RB_NJ2_CheckedChanged);
@@ -115,7 +112,6 @@
             this.RB_NJ1.Name = "RB_NJ1";
             this.RB_NJ1.Size = new System.Drawing.Size(71, 17);
             this.RB_NJ1.TabIndex = 0;
-            this.RB_NJ1.TabStop = true;
             this.RB_NJ1.Text = "Un joueur";
             this.RB_NJ1.UseVisualStyleBackColor = true;
             this.RB_NJ1.CheckedChanged += new System.EventHandler(this.RB_NJ1_CheckedChanged);
