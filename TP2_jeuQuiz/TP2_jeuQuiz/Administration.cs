@@ -12,7 +12,7 @@ namespace TP2_jeuQuiz
 {
    public partial class Administration : Form
    {
-      public String MotDePasse = "123";
+      public String MotDePasse = "admin";
 
       public Administration()
       {
