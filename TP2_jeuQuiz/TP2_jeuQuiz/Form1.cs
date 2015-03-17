@@ -69,7 +69,7 @@ namespace TP2_jeuQuiz
          {
             string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
                      "(HOST=205.237.244.251)(PORT=1521)))" + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
-            string ChaineConnexion = "Data Source = " + Dsource + ";User Id =" + "Labontel" + "; Password =" + "ORACLE1";
+            string ChaineConnexion = "Data Source = " + Dsource + ";User Id =" + "Rodierda" + "; Password =" + "ORACLE1";
 
             try
             {
@@ -89,6 +89,14 @@ namespace TP2_jeuQuiz
             {
                MessageBox.Show(ex.Message.ToString());
             }
+
+            groupBox1.Enabled = true;
+            GB_ChoixCat.Enabled = true;
+            GB_ChoixDeReponses.Enabled = true;
+            GB_Question.Enabled = true;
+            BTN_ProchainTour.Enabled = true;
+
+            GetQuestion();
          }
       }
 
@@ -117,15 +125,14 @@ namespace TP2_jeuQuiz
          oraSelect.CommandText = "GESTIONJEU.SELECTQUESTION";
          oraSelect.CommandType = CommandType.StoredProcedure;
 
-         OracleParameter oraNum = new OracleParameter("PNUM", OracleDbType.Int32);
-         oraNum.Direction = ParameterDirection.Input;
-         oraNum.Value = rdm.Next();
-         oraSelect.Parameters.Add(oraNum);
-
-         OracleParameter oraCursor = new OracleParameter("PPRIX", OracleDbType.RefCursor);
+         OracleParameter oraCursor = new OracleParameter("RESULTAT", OracleDbType.RefCursor);
          oraCursor.Direction = ParameterDirection.ReturnValue;
          oraSelect.Parameters.Add(oraCursor);
 
+         OracleParameter oraNum = new OracleParameter("NUMERODEQUESTION", OracleDbType.Int32);
+         oraNum.Direction = ParameterDirection.Input;
+         oraNum.Value = rdm.Next(1, 30);
+         oraSelect.Parameters.Add(oraNum);
 
          OracleDataAdapter orAdater = new OracleDataAdapter(oraSelect);
          if (MonDataSet.Tables.Contains("Question"))
@@ -133,7 +140,7 @@ namespace TP2_jeuQuiz
             MonDataSet.Tables["Question"].Clear();
          }
          orAdater.Fill(MonDataSet, "Question");
-         oraSelect.Dispose();
+         oraSelect.Dispose();         
       }
    }
 }
