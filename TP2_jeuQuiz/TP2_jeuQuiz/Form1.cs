@@ -20,6 +20,14 @@ namespace TP2_jeuQuiz
 
 
       public int NombreJoueurs = 0; // Quand c'est 0, y'a pas de partie en ce moment. 
+      public String NomJoueur1 = "";
+      public String NomJoueur2 = "";
+      public String NomJoueur3 = "";
+      public String NomJoueur4 = "";
+      public int ScoreJoueur1 = 0;
+      public int ScoreJoueur2 = 0;
+      public int ScoreJoueur3 = 0;
+      public int ScoreJoueur4 = 0; 
 
       public Form1()
       {
@@ -112,8 +120,10 @@ namespace TP2_jeuQuiz
              // Aller chercher le nombre de joeurs qu'il y a dans l'autre Form
             NombreJoueurs = FenetreNouvellePartie.NombreJoueurs;
 
-            
          }
+
+          // C'est tout le temps le joueur 1 qui commence à jouer
+         LBL_NomJoueurQuiJoue.Text = FenetreNouvellePartie.NomJoueur1.ToString();
       }
 
       private void panneauDadministrationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -189,7 +199,7 @@ namespace TP2_jeuQuiz
               }
               else if (SpinValeur == 3)
               {
-                  PNL_CouleurCategorie.BackColor = Color.Green;
+                  PNL_CouleurCategorie.BackColor = Color.Lime;
               }
               else if (SpinValeur == 4)
               {
@@ -229,7 +239,7 @@ namespace TP2_jeuQuiz
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
           }
-          else if (PNL_CouleurCategorie.BackColor == Color.Green)
+          else if (PNL_CouleurCategorie.BackColor == Color.Lime)
           { 
                 // Vert, couleur de la géographie
               GetQuestion();

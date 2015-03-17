@@ -14,6 +14,10 @@ namespace TP2_jeuQuiz
    {
        public int NombreJoueurs = 0;
        public bool Reprise = false;
+       public String NomJoueur1 = "";
+       public String NomJoueur2 = "";
+       public String NomJoueur3 = "";
+       public String NomJoueur4 = "";
 
       public NouvellePartie()
       {
@@ -65,6 +69,10 @@ namespace TP2_jeuQuiz
          TB_AliasJ2.Enabled = !RB_NJ1.Checked;
          TB_AliasJ3.Enabled = !RB_NJ1.Checked;
          TB_AliasJ4.Enabled = !RB_NJ1.Checked;
+         
+         TB_AliasJ2.Text = "";
+         TB_AliasJ3.Text = "";
+         TB_AliasJ4.Text = "";
 
          CheckToEnableCommencer();
       }
@@ -76,6 +84,9 @@ namespace TP2_jeuQuiz
          TB_AliasJ3.Enabled = !RB_NJ2.Checked;
          TB_AliasJ4.Enabled = !RB_NJ2.Checked;
 
+         TB_AliasJ3.Text = "";
+         TB_AliasJ4.Text = "";
+
          CheckToEnableCommencer();
       }
 
@@ -85,6 +96,8 @@ namespace TP2_jeuQuiz
          TB_AliasJ2.Enabled = RB_NJ3.Checked;
          TB_AliasJ3.Enabled = RB_NJ3.Checked;
          TB_AliasJ4.Enabled = !RB_NJ3.Checked;
+
+         TB_AliasJ4.Text = "";
 
          CheckToEnableCommencer();
       }
@@ -123,21 +136,25 @@ namespace TP2_jeuQuiz
       private void TB_AliasJ1_TextChanged(object sender, EventArgs e)
       {
           CheckToEnableCommencer();
+          NomJoueur1 = TB_AliasJ1.Text.ToString();
       }
 
       private void TB_AliasJ2_TextChanged(object sender, EventArgs e)
       {
           CheckToEnableCommencer();
+          NomJoueur2 = TB_AliasJ2.Text.ToString();
       }
 
       private void TB_AliasJ3_TextChanged(object sender, EventArgs e)
       {
           CheckToEnableCommencer();
+          NomJoueur3 = TB_AliasJ3.Text.ToString();
       }
 
       private void TB_AliasJ4_TextChanged(object sender, EventArgs e)
       {
           CheckToEnableCommencer();
+          NomJoueur4 = TB_AliasJ4.Text.ToString();
       }
 
       private void CB_Reprise_CheckedChanged(object sender, EventArgs e)
