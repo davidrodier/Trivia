@@ -38,7 +38,7 @@
             this.effacerUnJoueurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GB_SelectionPige = new System.Windows.Forms.GroupBox();
             this.LBL_Points = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BTN_PigerUneCouleur = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@
             this.RB_Choix1 = new System.Windows.Forms.RadioButton();
             this.BTN_ProchainTour = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.GB_SelectionPige.SuspendLayout();
             this.GB_ChoixCat.SuspendLayout();
             this.GB_Question.SuspendLayout();
             this.GB_ChoixDeReponses.SuspendLayout();
@@ -141,25 +141,25 @@
             // 
             this.infoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("infoToolStripMenuItem.Image")));
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.infoToolStripMenuItem.Text = "À propos";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // GB_SelectionPige
             // 
-            this.groupBox1.Controls.Add(this.LBL_Points);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.BTN_PigerUneCouleur);
-            this.groupBox1.Controls.Add(this.PNL_CouleurCategorie);
-            this.groupBox1.Controls.Add(this.LBL_NomJoueurQuiJoue);
-            this.groupBox1.Controls.Add(this.LBL_Joueur);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(13, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(191, 188);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sélectionneur";
+            this.GB_SelectionPige.Controls.Add(this.LBL_Points);
+            this.GB_SelectionPige.Controls.Add(this.label1);
+            this.GB_SelectionPige.Controls.Add(this.BTN_PigerUneCouleur);
+            this.GB_SelectionPige.Controls.Add(this.PNL_CouleurCategorie);
+            this.GB_SelectionPige.Controls.Add(this.LBL_NomJoueurQuiJoue);
+            this.GB_SelectionPige.Controls.Add(this.LBL_Joueur);
+            this.GB_SelectionPige.Enabled = false;
+            this.GB_SelectionPige.Location = new System.Drawing.Point(13, 28);
+            this.GB_SelectionPige.Name = "GB_SelectionPige";
+            this.GB_SelectionPige.Size = new System.Drawing.Size(191, 188);
+            this.GB_SelectionPige.TabIndex = 1;
+            this.GB_SelectionPige.TabStop = false;
+            this.GB_SelectionPige.Text = "Sélectionneur";
             // 
             // LBL_Points
             // 
@@ -187,6 +187,7 @@
             this.BTN_PigerUneCouleur.TabIndex = 3;
             this.BTN_PigerUneCouleur.Text = "Piger une couleur";
             this.BTN_PigerUneCouleur.UseVisualStyleBackColor = true;
+            this.BTN_PigerUneCouleur.Click += new System.EventHandler(this.BTN_PigerUneCouleur_Click);
             // 
             // PNL_CouleurCategorie
             // 
@@ -383,7 +384,7 @@
             this.Controls.Add(this.GB_ChoixDeReponses);
             this.Controls.Add(this.GB_Question);
             this.Controls.Add(this.GB_ChoixCat);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GB_SelectionPige);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -394,8 +395,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GB_SelectionPige.ResumeLayout(false);
+            this.GB_SelectionPige.PerformLayout();
             this.GB_ChoixCat.ResumeLayout(false);
             this.GB_ChoixCat.PerformLayout();
             this.GB_Question.ResumeLayout(false);
@@ -415,7 +416,7 @@
       private System.Windows.Forms.ToolStripMenuItem àProposToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem nouvellePartieToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
-      private System.Windows.Forms.GroupBox groupBox1;
+      private System.Windows.Forms.GroupBox GB_SelectionPige;
       private System.Windows.Forms.Label LBL_NomJoueurQuiJoue;
       private System.Windows.Forms.Label LBL_Joueur;
       private System.Windows.Forms.Button BTN_PigerUneCouleur;

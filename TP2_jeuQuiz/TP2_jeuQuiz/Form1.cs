@@ -90,11 +90,10 @@ namespace TP2_jeuQuiz
                MessageBox.Show(ex.Message.ToString());
             }
 
-            groupBox1.Enabled = true;
-            GB_ChoixCat.Enabled = true;
-            GB_ChoixDeReponses.Enabled = true;
-            GB_Question.Enabled = true;
-            BTN_ProchainTour.Enabled = true;
+            GB_SelectionPige.Enabled = true;
+            //
+
+            //BTN_ProchainTour.Enabled = true;
 
            // On a deux choix, remettre à noeuf la table d'un joueur pour commencer une partie à zéro
             if (FenetreNouvellePartie.Reprise == false)
@@ -112,7 +111,7 @@ namespace TP2_jeuQuiz
              // Aller chercher le nombre de joeurs qu'il y a dans l'autre Form
             NombreJoueurs = FenetreNouvellePartie.NombreJoueurs;
 
-            GetQuestion();
+            
          }
       }
 
@@ -157,6 +156,69 @@ namespace TP2_jeuQuiz
          }
          orAdater.Fill(MonDataSet, "Question");
          oraSelect.Dispose();         
+      }
+
+      private void BTN_PigerUneCouleur_Click(object sender, EventArgs e)
+      {
+          // Faire plein d'affaire random pour la couleur.... 
+
+          //TO-DO : code
+
+
+
+          // Check si la couleur obtenue est le blanc
+          if (PNL_CouleurCategorie.BackColor.B == 255
+              && PNL_CouleurCategorie.BackColor.R == 255
+              && PNL_CouleurCategorie.BackColor.G == 255)
+          {
+              GB_ChoixCat.Enabled = true;
+
+              // Faut attendre que la catégorie soit choisie
+
+          }
+          else if (PNL_CouleurCategorie.BackColor.B == 255
+              && PNL_CouleurCategorie.BackColor.R == 0
+              && PNL_CouleurCategorie.BackColor.G == 0)
+          { 
+               // Couleur bleue, catégorie des sports 
+              GetQuestion();
+
+              GB_ChoixDeReponses.Enabled = true;
+              GB_Question.Enabled = true;
+
+          }
+          else if (PNL_CouleurCategorie.BackColor.B == 0
+              && PNL_CouleurCategorie.BackColor.R == 255
+              && PNL_CouleurCategorie.BackColor.G == 255)
+          { 
+                // Couleur Jaune, catég de l'histoire
+              GetQuestion();
+
+              GB_ChoixDeReponses.Enabled = true;
+              GB_Question.Enabled = true;
+          }
+          else if (PNL_CouleurCategorie.BackColor.B == 0
+              && PNL_CouleurCategorie.BackColor.R == 0
+              && PNL_CouleurCategorie.BackColor.G == 255)
+          { 
+                // Vert, couleur de la géographie
+              GetQuestion();
+
+              GB_ChoixDeReponses.Enabled = true;
+              GB_Question.Enabled = true;
+          }
+          else if (PNL_CouleurCategorie.BackColor.B == 0
+              && PNL_CouleurCategorie.BackColor.R == 255
+              && PNL_CouleurCategorie.BackColor.G == 0)
+          { 
+            // Rouge, la couleur de l'art & de la culture
+              GetQuestion();
+
+              GB_ChoixDeReponses.Enabled = true;
+              GB_Question.Enabled = true;
+
+          }
+
       }
    }
 }
