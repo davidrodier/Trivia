@@ -144,6 +144,7 @@
             this.TB_AliasJ4.Name = "TB_AliasJ4";
             this.TB_AliasJ4.Size = new System.Drawing.Size(100, 20);
             this.TB_AliasJ4.TabIndex = 7;
+            this.TB_AliasJ4.TextChanged += new System.EventHandler(this.TB_AliasJ4_TextChanged);
             // 
             // TB_AliasJ3
             // 
@@ -153,6 +154,7 @@
             this.TB_AliasJ3.Name = "TB_AliasJ3";
             this.TB_AliasJ3.Size = new System.Drawing.Size(100, 20);
             this.TB_AliasJ3.TabIndex = 6;
+            this.TB_AliasJ3.TextChanged += new System.EventHandler(this.TB_AliasJ3_TextChanged);
             // 
             // TB_AliasJ2
             // 
@@ -162,6 +164,7 @@
             this.TB_AliasJ2.Name = "TB_AliasJ2";
             this.TB_AliasJ2.Size = new System.Drawing.Size(100, 20);
             this.TB_AliasJ2.TabIndex = 5;
+            this.TB_AliasJ2.TextChanged += new System.EventHandler(this.TB_AliasJ2_TextChanged);
             // 
             // TB_AliasJ1
             // 
@@ -171,6 +174,7 @@
             this.TB_AliasJ1.Name = "TB_AliasJ1";
             this.TB_AliasJ1.Size = new System.Drawing.Size(100, 20);
             this.TB_AliasJ1.TabIndex = 4;
+            this.TB_AliasJ1.TextChanged += new System.EventHandler(this.TB_AliasJ1_TextChanged);
             // 
             // LBL_Pseudo4
             // 
@@ -211,6 +215,7 @@
             // BTN_CommencerPartie
             // 
             this.BTN_CommencerPartie.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BTN_CommencerPartie.Enabled = false;
             this.BTN_CommencerPartie.Location = new System.Drawing.Point(101, 172);
             this.BTN_CommencerPartie.Name = "BTN_CommencerPartie";
             this.BTN_CommencerPartie.Size = new System.Drawing.Size(182, 29);
