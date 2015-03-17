@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using System.IO;
 
 namespace TP2_jeuQuiz
 {
@@ -175,6 +176,10 @@ namespace TP2_jeuQuiz
 
           Random Randomizateur = new Random();
 
+          // Jouer le son du spin
+          System.Media.SoundPlayer playerRoule = new System.Media.SoundPlayer(Properties.Resources.roule);
+          playerRoule.PlayLooping();
+
           int SpinTime = 200;
           int SpinValeur = 0;
           while (SpinTime > 0)
@@ -206,12 +211,17 @@ namespace TP2_jeuQuiz
                   PNL_CouleurCategorie.BackColor = Color.Red;
               }
 
-              SpinTime -= Randomizateur.Next(2, 9);
+              SpinTime -= Randomizateur.Next(3, 12);
               PNL_CouleurCategorie.Update();
               Thread.Sleep(100);
           }
 
+          playerRoule.Stop();
           BTN_PigerUneCouleur.Enabled = false;
+
+          // Jouer le son de la selection terminée
+          System.Media.SoundPlayer playerSelect = new System.Media.SoundPlayer(Properties.Resources.select);
+          playerSelect.Play();
 
           // Check si la couleur obtenue est le blanc
           if (PNL_CouleurCategorie.BackColor == Color.White)
