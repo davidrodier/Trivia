@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
@@ -18,23 +18,6 @@ namespace TP2_jeuQuiz
       private OracleParameter Param = new OracleParameter();
       private OracleDataAdapter Adapter = new OracleDataAdapter();
 
-      List<string> CouleursNoms = new List<string>()
-	{
-	    "blanc",
-	    "bleu",
-        "jaune",
-        "vert",
-	    "rouge"
-	};
-
-      List<int> CouleursValeurs = new List<int>()
-	{
-	    255,255,255,    // Blanc
-	    0, 0, 255,      // Bleu
-        255, 255, 0,    // Jaune
-        0, 255, 0,      // Vert
-	    255, 0, 0       // Rouge
-	};
 
       public int NombreJoueurs = 0; // Quand c'est 0, y'a pas de partie en ce moment. 
 
@@ -180,8 +163,45 @@ namespace TP2_jeuQuiz
       {
           // Faire plein d'affaire random pour la couleur.... 
 
-          //TO-DO : code
+          Random Randomizateur = new Random();
 
+          int SpinTime = 200;
+          int SpinValeur = 0;
+          while (SpinTime > 0)
+          {
+              SpinValeur += Randomizateur.Next(1, 5);
+
+              // Si la valeur est trop haute, on la baisse
+              if (SpinValeur >= 5)
+                  SpinValeur -= 5;
+
+              if (SpinValeur == 0)
+              {
+                  PNL_CouleurCategorie.BackColor = Color.White;
+              }
+              else if (SpinValeur == 1)
+              {
+                  PNL_CouleurCategorie.BackColor = Color.Blue;
+              }
+              else if (SpinValeur == 2)
+              {
+                  PNL_CouleurCategorie.BackColor = Color.Yellow;
+              }
+              else if (SpinValeur == 3)
+              {
+                  PNL_CouleurCategorie.BackColor = Color.Lime;
+              }
+              else if (SpinValeur == 4)
+              {
+                  PNL_CouleurCategorie.BackColor = Color.Red;
+              }
+
+              SpinTime -= Randomizateur.Next(2, 9);
+              PNL_CouleurCategorie.Update();
+              Thread.Sleep(100);
+          }
+
+          BTN_PigerUneCouleur.Enabled = false;
 
 
           // Check si la couleur obtenue est le blanc
