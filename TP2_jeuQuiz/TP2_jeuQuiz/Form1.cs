@@ -18,6 +18,24 @@ namespace TP2_jeuQuiz
       private OracleParameter Param = new OracleParameter();
       private OracleDataAdapter Adapter = new OracleDataAdapter();
 
+      List<string> CouleursNoms = new List<string>()
+	{
+	    "blanc",
+	    "bleu",
+        "jaune",
+        "vert",
+	    "rouge"
+	};
+
+      List<int> CouleursValeurs = new List<int>()
+	{
+	    255,255,255,    // Blanc
+	    0, 0, 255,      // Bleu
+        255, 255, 0,    // Jaune
+        0, 255, 0,      // Vert
+	    255, 0, 0       // Rouge
+	};
+
       public int NombreJoueurs = 0; // Quand c'est 0, y'a pas de partie en ce moment. 
 
       public Form1()
