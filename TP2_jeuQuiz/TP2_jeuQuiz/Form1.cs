@@ -213,11 +213,11 @@ namespace TP2_jeuQuiz
 
           BTN_PigerUneCouleur.Enabled = false;
 
-
           // Check si la couleur obtenue est le blanc
           if (PNL_CouleurCategorie.BackColor == Color.White)
           {
               GB_ChoixCat.Enabled = true;
+              GB_ChoixCat.Show();
 
               // Faut attendre que la catégorie soit choisie
 
@@ -225,7 +225,6 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Blue)
           { 
                // Couleur bleue, catégorie des sports 
-              GetQuestion();
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
@@ -234,7 +233,6 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Yellow)
           { 
                 // Couleur Jaune, catég de l'histoire
-              GetQuestion();
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
@@ -242,7 +240,6 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Lime)
           { 
                 // Vert, couleur de la géographie
-              GetQuestion();
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
@@ -250,13 +247,40 @@ namespace TP2_jeuQuiz
           else if (PNL_CouleurCategorie.BackColor == Color.Red)
           { 
             // Rouge, la couleur de l'art & de la culture
-              GetQuestion();
 
               GB_ChoixDeReponses.Enabled = true;
               GB_Question.Enabled = true;
 
           }
+          GetQuestion();
+      }
 
+      private void RB_Sport_CheckedChanged(object sender, EventArgs e)
+      {
+          GB_ChoixCat.Enabled = false;
+          Thread.Sleep(250);
+          GB_ChoixCat.Hide();
+      }
+
+      private void RB_Histoire_CheckedChanged(object sender, EventArgs e)
+      {
+          GB_ChoixCat.Enabled = false;
+          Thread.Sleep(250);
+          GB_ChoixCat.Hide();
+      }
+
+      private void RB_Geographie_CheckedChanged(object sender, EventArgs e)
+      {
+          GB_ChoixCat.Enabled = false;
+          Thread.Sleep(250);
+          GB_ChoixCat.Hide();
+      }
+
+      private void RB_ArtCulture_CheckedChanged(object sender, EventArgs e)
+      {
+          GB_ChoixCat.Enabled = false;
+          Thread.Sleep(250);
+          GB_ChoixCat.Hide();
       }
    }
 }

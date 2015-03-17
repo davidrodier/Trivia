@@ -233,6 +233,7 @@
             this.GB_ChoixCat.TabIndex = 2;
             this.GB_ChoixCat.TabStop = false;
             this.GB_ChoixCat.Text = "Choix catégorie";
+            this.GB_ChoixCat.Visible = false;
             // 
             // LBL_PouvezChoisirVotreCateg
             // 
@@ -253,6 +254,7 @@
             this.RB_ArtCulture.TabStop = true;
             this.RB_ArtCulture.Text = "Art et culture";
             this.RB_ArtCulture.UseVisualStyleBackColor = true;
+            this.RB_ArtCulture.CheckedChanged += new System.EventHandler(this.RB_ArtCulture_CheckedChanged);
             // 
             // RB_Geographie
             // 
@@ -264,6 +266,7 @@
             this.RB_Geographie.TabStop = true;
             this.RB_Geographie.Text = "Géographie";
             this.RB_Geographie.UseVisualStyleBackColor = true;
+            this.RB_Geographie.CheckedChanged += new System.EventHandler(this.RB_Geographie_CheckedChanged);
             // 
             // RB_Histoire
             // 
@@ -275,6 +278,7 @@
             this.RB_Histoire.TabStop = true;
             this.RB_Histoire.Text = "Histoire";
             this.RB_Histoire.UseVisualStyleBackColor = true;
+            this.RB_Histoire.CheckedChanged += new System.EventHandler(this.RB_Histoire_CheckedChanged);
             // 
             // RB_Sport
             // 
@@ -286,6 +290,7 @@
             this.RB_Sport.TabStop = true;
             this.RB_Sport.Text = "Sport";
             this.RB_Sport.UseVisualStyleBackColor = true;
+            this.RB_Sport.CheckedChanged += new System.EventHandler(this.RB_Sport_CheckedChanged);
             // 
             // GB_Question
             // 
