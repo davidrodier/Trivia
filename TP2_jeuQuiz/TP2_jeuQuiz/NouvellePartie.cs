@@ -12,6 +12,8 @@ namespace TP2_jeuQuiz
 {
    public partial class NouvellePartie : Form
    {
+       public int NombreJoueurs = 0;
+
       public NouvellePartie()
       {
          InitializeComponent();
@@ -57,6 +59,27 @@ namespace TP2_jeuQuiz
          TB_AliasJ2.Enabled = RB_NJ4.Checked;
          TB_AliasJ3.Enabled = RB_NJ4.Checked;
          TB_AliasJ4.Enabled = RB_NJ4.Checked;
+      }
+
+      private void BTN_CommencerPartie_Click(object sender, EventArgs e)
+      {
+          // On check combien de joueurs il y a
+          if (RB_NJ4.Checked)
+          {
+              NombreJoueurs = 4;
+          }
+          else if (RB_NJ3.Checked)
+          {
+              NombreJoueurs = 3;
+          }
+          else if (RB_NJ2.Checked)
+          {
+              NombreJoueurs = 2;
+          }
+          else if (RB_NJ1.Checked)
+          {
+              NombreJoueurs = 1;
+          }
       }
    }
 }

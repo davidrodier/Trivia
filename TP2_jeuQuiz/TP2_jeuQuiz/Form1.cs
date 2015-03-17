@@ -97,6 +97,9 @@ namespace TP2_jeuQuiz
             BTN_ProchainTour.Enabled = true;
 
             GetQuestion();
+
+             // Aller chercher le nombre de joeurs qu'il y a dans l'autre Form
+            NombreJoueurs = FenetreNouvellePartie.NombreJoueurs;
          }
       }
 
