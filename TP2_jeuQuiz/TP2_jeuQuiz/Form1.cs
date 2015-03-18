@@ -350,15 +350,16 @@ namespace TP2_jeuQuiz
             else if (tmp == 4)
             {
                 RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
-                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
-                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
                 RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
-                NumeroBonneReponse = 3;
+                NumeroBonneReponse = 2;
             }
         }
 
         private void RB_Sport_CheckedChanged(object sender, EventArgs e)
         {
+            RB_Sport.Checked = false;
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
             GB_ChoixCat.Hide();
@@ -366,10 +367,13 @@ namespace TP2_jeuQuiz
 
             GB_ChoixDeReponses.Enabled = true;
             GB_Question.Enabled = true;
+
+            ShowQuestion();
         }
 
         private void RB_Histoire_CheckedChanged(object sender, EventArgs e)
         {
+            RB_Histoire.Checked = false;
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
             GB_ChoixCat.Hide();
@@ -377,10 +381,13 @@ namespace TP2_jeuQuiz
 
             GB_ChoixDeReponses.Enabled = true;
             GB_Question.Enabled = true;
+
+            ShowQuestion();
         }
 
         private void RB_Geographie_CheckedChanged(object sender, EventArgs e)
         {
+            RB_Geographie.Checked = false;
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
             GB_ChoixCat.Hide();
@@ -388,10 +395,13 @@ namespace TP2_jeuQuiz
 
             GB_ChoixDeReponses.Enabled = true;
             GB_Question.Enabled = true;
+
+            ShowQuestion();
         }
 
         private void RB_ArtCulture_CheckedChanged(object sender, EventArgs e)
         {
+            RB_ArtCulture.Checked = false;
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
             GB_ChoixCat.Hide();
@@ -399,30 +409,44 @@ namespace TP2_jeuQuiz
 
             GB_ChoixDeReponses.Enabled = true;
             GB_Question.Enabled = true;
+
+            ShowQuestion();
         }
 
         private void RB_Choix1_CheckedChanged(object sender, EventArgs e)
         {
             // Choix de réponse 1
-
+            if(NumeroBonneReponse == 1)
+            {
+                MessageBox.Show("Voila");
+            }
         }
 
         private void RB_Choix2_CheckedChanged(object sender, EventArgs e)
         {
             // Choix de réponse 2
-
+            if (NumeroBonneReponse == 2)
+            {
+                MessageBox.Show("Voila");
+            }
         }
 
         private void RB_Choix3_CheckedChanged(object sender, EventArgs e)
         {
             // Choix de réponse 3
-
+            if (NumeroBonneReponse == 3)
+            {
+                MessageBox.Show("Voila");
+            }
         }
 
         private void RB_Choix4_CheckedChanged(object sender, EventArgs e)
         {
             // Choix de réponse 4
-
+            if (NumeroBonneReponse == 4)
+            {
+                MessageBox.Show("Voila");
+            }
         }
     }
 }
