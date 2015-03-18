@@ -303,13 +303,12 @@ namespace TP2_jeuQuiz
                 GB_Question.Enabled = true;
 
             }
-            //GetQuestionCategory();
 
             Random QuestionRdm = new Random();
 
             int CodeQuestion = QuestionRdm.Next(1, MonDataSet.Tables["Question"].Rows.Count);
 
-            GetQuestionNumero(CodeQuestion);
+            GetQuestionNumero(Convert.ToInt32(MonDataSet.Tables["Question"].Rows[CodeQuestion].ItemArray.GetValue(0)));
         }
 
         private void RB_Sport_CheckedChanged(object sender, EventArgs e)
