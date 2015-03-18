@@ -20,7 +20,8 @@ namespace TP2_jeuQuiz
         private OracleDataAdapter Adapter = new OracleDataAdapter();
 
 
-        public int NombreJoueurs = 0; // Quand c'est 0, y'a pas de partie en ce moment. 
+        public int NombreJoueurs = 0; // Quand c'est 0, y'a pas de partie en ce moment.
+        public int NumeroBonneReponse = 0;
         public String NomJoueur1 = "";
         public String NomJoueur2 = "";
         public String NomJoueur3 = "";
@@ -304,11 +305,56 @@ namespace TP2_jeuQuiz
 
             }
 
+            if (PNL_CouleurCategorie.BackColor != Color.White)
+            {
+                ShowQuestion();
+            }
+        }
+
+        private void ShowQuestion()
+        {
             Random QuestionRdm = new Random();
 
             int CodeQuestion = QuestionRdm.Next(1, MonDataSet.Tables["Question"].Rows.Count);
 
             GetQuestionNumero(Convert.ToInt32(MonDataSet.Tables["Question"].Rows[CodeQuestion].ItemArray.GetValue(0)));
+
+            int tmp = QuestionRdm.Next(1, 4);
+
+            LBL_EnonceDeLaQuestion.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(0).ToString();
+
+            if (tmp == 1)
+            {
+                RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
+                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
+                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
+                NumeroBonneReponse = 3;
+            }
+            else if (tmp == 2)
+            {
+                RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
+                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
+                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
+                RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                NumeroBonneReponse = 4;
+            }
+            else if (tmp == 3)
+            {
+                RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
+                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
+                RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
+                NumeroBonneReponse = 1;
+            }
+            else if (tmp == 4)
+            {
+                RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
+                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
+                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
+                NumeroBonneReponse = 3;
+            }
         }
 
         private void RB_Sport_CheckedChanged(object sender, EventArgs e)
