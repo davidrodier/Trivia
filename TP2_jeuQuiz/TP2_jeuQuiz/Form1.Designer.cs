@@ -383,6 +383,7 @@
             this.BTN_ProchainTour.TabIndex = 4;
             this.BTN_ProchainTour.Text = "Passer au prochain tour";
             this.BTN_ProchainTour.UseVisualStyleBackColor = true;
+            this.BTN_ProchainTour.Click += new System.EventHandler(this.BTN_ProchainTour_Click);
             // 
             // Form1
             // 

@@ -14,11 +14,8 @@ namespace TP2_jeuQuiz
 {
     public partial class Form1 : Form
     {
-        private OracleConnection OraConn = new OracleConnection();
-        private DataSet MonDataSet = new DataSet();
-        private OracleParameter Param = new OracleParameter();
-        private OracleDataAdapter Adapter = new OracleDataAdapter();
-
+        public OracleConnection OraConn = new OracleConnection();
+        public DataSet MonDataSet = new DataSet();
 
         public int NombreJoueurs = 0; // Quand c'est 0, y'a pas de partie en ce moment.
         public int NumeroBonneReponse = 0;
@@ -34,6 +31,27 @@ namespace TP2_jeuQuiz
         public Form1()
         {
             InitializeComponent();
+            string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
+         "(HOST=205.237.244.251)(PORT=1521)))" + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
+            string ChaineConnexion = "Data Source = " + Dsource + ";User Id =" + "Rodierda" + "; Password =" + "ORACLE1";
+
+            try
+            {
+                OraConn.ConnectionString = ChaineConnexion;
+
+                if (OraConn.State.ToString() == "Open")
+                {
+                    OraConn.Close();
+                }
+                else
+                {
+                    OraConn.Open();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,40 +96,6 @@ namespace TP2_jeuQuiz
 
             if (FenetreNouvellePartie.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                string Dsource = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)" +
-                         "(HOST=205.237.244.251)(PORT=1521)))" + "(CONNECT_DATA=(SERVICE_NAME=ORCL.clg.qc.ca)))";
-                string ChaineConnexion = "Data Source = " + Dsource + ";User Id =" + "Rodierda" + "; Password =" + "ORACLE1";
-
-                try
-                {
-                    OraConn.ConnectionString = ChaineConnexion;
-
-                    if (OraConn.State.ToString() == "Open")
-                    {
-                        OraConn.Close();
-                    }
-                    else
-                    {
-                        OraConn.Open();
-                    }
-
-                    
-
-                    /* Pas besoin de ce message */
-                    //if (OraConn.State.ToString() == "Open")
-                    //{
-                    //    MessageBox.Show("Connecté");
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show(OraConn.State.ToString());
-                    //}
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
-
                 GB_SelectionPige.Enabled = true;
                 //
 
@@ -141,7 +125,23 @@ namespace TP2_jeuQuiz
 
         private void panneauDadministrationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Administration FenetreAdmin = new Administration();
+            OracleCommand oraSelect = new OracleCommand("GESTIONJEU", OraConn);
+            oraSelect.CommandText = "GESTIONJEU.SELECTLASTCODE";
+            oraSelect.CommandType = CommandType.StoredProcedure;
+
+            OracleParameter oraCursor = new OracleParameter("RESULTAT", OracleDbType.RefCursor);
+            oraCursor.Direction = ParameterDirection.ReturnValue;
+            oraSelect.Parameters.Add(oraCursor);
+
+            OracleDataAdapter orAdater = new OracleDataAdapter(oraSelect);
+            if (MonDataSet.Tables.Contains("NumPlusGrand"))
+            {
+                MonDataSet.Tables["NumPlusGrand"].Clear();
+            }
+            orAdater.Fill(MonDataSet, "NumPlusGrand");
+            oraSelect.Dispose();
+
+            Administration FenetreAdmin = new Administration(Convert.ToInt32(MonDataSet.Tables["NumPlusGrand"].Rows[0].ItemArray.GetValue(0)));
             FenetreAdmin.ShowDialog();
         }
 
@@ -416,9 +416,10 @@ namespace TP2_jeuQuiz
         private void RB_Choix1_CheckedChanged(object sender, EventArgs e)
         {
             // Choix de réponse 1
-            if(NumeroBonneReponse == 1)
+            if (NumeroBonneReponse == 1)
             {
                 MessageBox.Show("Voila");
+                BTN_ProchainTour.Enabled = true;
             }
         }
 
@@ -428,6 +429,7 @@ namespace TP2_jeuQuiz
             if (NumeroBonneReponse == 2)
             {
                 MessageBox.Show("Voila");
+                BTN_ProchainTour.Enabled = true;
             }
         }
 
@@ -437,6 +439,7 @@ namespace TP2_jeuQuiz
             if (NumeroBonneReponse == 3)
             {
                 MessageBox.Show("Voila");
+                BTN_ProchainTour.Enabled = true;
             }
         }
 
@@ -446,7 +449,13 @@ namespace TP2_jeuQuiz
             if (NumeroBonneReponse == 4)
             {
                 MessageBox.Show("Voila");
+                BTN_ProchainTour.Enabled = true;
             }
+        }
+
+        private void BTN_ProchainTour_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
