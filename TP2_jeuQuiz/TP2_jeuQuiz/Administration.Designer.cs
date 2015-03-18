@@ -46,15 +46,12 @@
             this.TB_CodeReponse = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GB_Question = new System.Windows.Forms.GroupBox();
-            this.BTN_EffacerQuestion = new System.Windows.Forms.Button();
-            this.BTN_RemplacerQuestion = new System.Windows.Forms.Button();
-            this.BTN_InsererQuestions = new System.Windows.Forms.Button();
+            this.CB_CodeCatégorie = new System.Windows.Forms.ComboBox();
             this.TB_EnoncerQuestion = new System.Windows.Forms.TextBox();
             this.TB_CodeQuestion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.CB_CodeCatégorie = new System.Windows.Forms.ComboBox();
             this.GB_MotDePasse.SuspendLayout();
             this.GB_Reponses.SuspendLayout();
             this.GB_Question.SuspendLayout();
@@ -114,6 +111,7 @@
             // 
             // BTN_EffacerReponses
             // 
+            this.BTN_EffacerReponses.Enabled = false;
             this.BTN_EffacerReponses.Location = new System.Drawing.Point(316, 71);
             this.BTN_EffacerReponses.Name = "BTN_EffacerReponses";
             this.BTN_EffacerReponses.Size = new System.Drawing.Size(75, 23);
@@ -124,6 +122,7 @@
             // 
             // BTN_RemplacerReponses
             // 
+            this.BTN_RemplacerReponses.Enabled = false;
             this.BTN_RemplacerReponses.Location = new System.Drawing.Point(224, 71);
             this.BTN_RemplacerReponses.Name = "BTN_RemplacerReponses";
             this.BTN_RemplacerReponses.Size = new System.Drawing.Size(75, 23);
@@ -134,6 +133,7 @@
             // 
             // BTN_InsererReponse
             // 
+            this.BTN_InsererReponse.Enabled = false;
             this.BTN_InsererReponse.Location = new System.Drawing.Point(130, 71);
             this.BTN_InsererReponse.Name = "BTN_InsererReponse";
             this.BTN_InsererReponse.Size = new System.Drawing.Size(75, 23);
@@ -149,6 +149,7 @@
             this.TB_BonneReponse.Name = "TB_BonneReponse";
             this.TB_BonneReponse.Size = new System.Drawing.Size(112, 20);
             this.TB_BonneReponse.TabIndex = 9;
+            this.TB_BonneReponse.TextChanged += new System.EventHandler(this.TB_BonneReponse_TextChanged);
             // 
             // TB_MauvaiseReponse3
             // 
@@ -157,6 +158,7 @@
             this.TB_MauvaiseReponse3.Name = "TB_MauvaiseReponse3";
             this.TB_MauvaiseReponse3.Size = new System.Drawing.Size(131, 20);
             this.TB_MauvaiseReponse3.TabIndex = 8;
+            this.TB_MauvaiseReponse3.TextChanged += new System.EventHandler(this.TB_MauvaiseReponse3_TextChanged);
             // 
             // TB_MauvaiseReponse2
             // 
@@ -165,6 +167,7 @@
             this.TB_MauvaiseReponse2.Name = "TB_MauvaiseReponse2";
             this.TB_MauvaiseReponse2.Size = new System.Drawing.Size(130, 20);
             this.TB_MauvaiseReponse2.TabIndex = 7;
+            this.TB_MauvaiseReponse2.TextChanged += new System.EventHandler(this.TB_MauvaiseReponse2_TextChanged);
             // 
             // TB_MauvaiseReponse1
             // 
@@ -173,6 +176,7 @@
             this.TB_MauvaiseReponse1.Name = "TB_MauvaiseReponse1";
             this.TB_MauvaiseReponse1.Size = new System.Drawing.Size(112, 20);
             this.TB_MauvaiseReponse1.TabIndex = 6;
+            this.TB_MauvaiseReponse1.TextChanged += new System.EventHandler(this.TB_MauvaiseReponse1_TextChanged);
             // 
             // label5
             // 
@@ -231,9 +235,6 @@
             // GB_Question
             // 
             this.GB_Question.Controls.Add(this.CB_CodeCatégorie);
-            this.GB_Question.Controls.Add(this.BTN_EffacerQuestion);
-            this.GB_Question.Controls.Add(this.BTN_RemplacerQuestion);
-            this.GB_Question.Controls.Add(this.BTN_InsererQuestions);
             this.GB_Question.Controls.Add(this.TB_EnoncerQuestion);
             this.GB_Question.Controls.Add(this.TB_CodeQuestion);
             this.GB_Question.Controls.Add(this.label9);
@@ -247,39 +248,23 @@
             this.GB_Question.TabStop = false;
             this.GB_Question.Text = "Questions";
             // 
-            // BTN_EffacerQuestion
+            // CB_CodeCatégorie
             // 
-            this.BTN_EffacerQuestion.Location = new System.Drawing.Point(316, 67);
-            this.BTN_EffacerQuestion.Name = "BTN_EffacerQuestion";
-            this.BTN_EffacerQuestion.Size = new System.Drawing.Size(75, 23);
-            this.BTN_EffacerQuestion.TabIndex = 10;
-            this.BTN_EffacerQuestion.Text = "Effacer...";
-            this.BTN_EffacerQuestion.UseVisualStyleBackColor = true;
-            this.BTN_EffacerQuestion.Click += new System.EventHandler(this.BTN_EffacerQuestion_Click);
-            // 
-            // BTN_RemplacerQuestion
-            // 
-            this.BTN_RemplacerQuestion.Location = new System.Drawing.Point(224, 67);
-            this.BTN_RemplacerQuestion.Name = "BTN_RemplacerQuestion";
-            this.BTN_RemplacerQuestion.Size = new System.Drawing.Size(75, 23);
-            this.BTN_RemplacerQuestion.TabIndex = 9;
-            this.BTN_RemplacerQuestion.Text = "Remplacer...";
-            this.BTN_RemplacerQuestion.UseVisualStyleBackColor = true;
-            this.BTN_RemplacerQuestion.Click += new System.EventHandler(this.BTN_RemplacerQuestion_Click);
-            // 
-            // BTN_InsererQuestions
-            // 
-            this.BTN_InsererQuestions.Location = new System.Drawing.Point(130, 67);
-            this.BTN_InsererQuestions.Name = "BTN_InsererQuestions";
-            this.BTN_InsererQuestions.Size = new System.Drawing.Size(75, 23);
-            this.BTN_InsererQuestions.TabIndex = 8;
-            this.BTN_InsererQuestions.Text = "Insérer";
-            this.BTN_InsererQuestions.UseVisualStyleBackColor = true;
-            this.BTN_InsererQuestions.Click += new System.EventHandler(this.BTN_InsererQuestions_Click);
+            this.CB_CodeCatégorie.FormattingEnabled = true;
+            this.CB_CodeCatégorie.Items.AddRange(new object[] {
+            "Histoire",
+            "Sport",
+            "Géographie",
+            "Art et Culture"});
+            this.CB_CodeCatégorie.Location = new System.Drawing.Point(362, 29);
+            this.CB_CodeCatégorie.Name = "CB_CodeCatégorie";
+            this.CB_CodeCatégorie.Size = new System.Drawing.Size(112, 21);
+            this.CB_CodeCatégorie.TabIndex = 11;
+            this.CB_CodeCatégorie.Text = "Sport";
             // 
             // TB_EnoncerQuestion
             // 
-            this.TB_EnoncerQuestion.Location = new System.Drawing.Point(67, 41);
+            this.TB_EnoncerQuestion.Location = new System.Drawing.Point(68, 68);
             this.TB_EnoncerQuestion.MaxLength = 100;
             this.TB_EnoncerQuestion.Name = "TB_EnoncerQuestion";
             this.TB_EnoncerQuestion.Size = new System.Drawing.Size(483, 20);
@@ -289,7 +274,7 @@
             // TB_CodeQuestion
             // 
             this.TB_CodeQuestion.Enabled = false;
-            this.TB_CodeQuestion.Location = new System.Drawing.Point(93, 17);
+            this.TB_CodeQuestion.Location = new System.Drawing.Point(117, 29);
             this.TB_CodeQuestion.MaxLength = 10;
             this.TB_CodeQuestion.Name = "TB_CodeQuestion";
             this.TB_CodeQuestion.Size = new System.Drawing.Size(112, 20);
@@ -298,7 +283,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 44);
+            this.label9.Location = new System.Drawing.Point(10, 71);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 13);
             this.label9.TabIndex = 3;
@@ -307,7 +292,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 20);
+            this.label8.Location = new System.Drawing.Point(33, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 13);
             this.label8.TabIndex = 2;
@@ -316,25 +301,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(250, 20);
+            this.label7.Location = new System.Drawing.Point(274, 32);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Code catégorie:";
-            // 
-            // CB_CodeCatégorie
-            // 
-            this.CB_CodeCatégorie.FormattingEnabled = true;
-            this.CB_CodeCatégorie.Items.AddRange(new object[] {
-            "Histoire",
-            "Sport",
-            "Géographie",
-            "Art et Culture"});
-            this.CB_CodeCatégorie.Location = new System.Drawing.Point(338, 17);
-            this.CB_CodeCatégorie.Name = "CB_CodeCatégorie";
-            this.CB_CodeCatégorie.Size = new System.Drawing.Size(112, 21);
-            this.CB_CodeCatégorie.TabIndex = 11;
-            this.CB_CodeCatégorie.Text = "Sport";
             // 
             // Administration
             // 
@@ -383,9 +354,6 @@
         private System.Windows.Forms.Button BTN_EffacerReponses;
         private System.Windows.Forms.Button BTN_RemplacerReponses;
         private System.Windows.Forms.Button BTN_InsererReponse;
-        private System.Windows.Forms.Button BTN_EffacerQuestion;
-        private System.Windows.Forms.Button BTN_RemplacerQuestion;
-        private System.Windows.Forms.Button BTN_InsererQuestions;
         private System.Windows.Forms.ComboBox CB_CodeCatégorie;
     }
 }
