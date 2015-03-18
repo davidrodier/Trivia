@@ -271,6 +271,10 @@ namespace TP2_jeuQuiz
 
           }
           //GetQuestion();
+
+          Random QuestionRdm = new Random();
+
+          int CodeQuestion = QuestionRdm.Next(1, MonDataSet.Tables["Question"].Rows.Count);
       }
 
       private void RB_Sport_CheckedChanged(object sender, EventArgs e)
