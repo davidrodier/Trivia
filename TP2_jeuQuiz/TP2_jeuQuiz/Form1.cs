@@ -84,16 +84,27 @@ namespace TP2_jeuQuiz
                 try
                 {
                     OraConn.ConnectionString = ChaineConnexion;
-                    OraConn.Open();
 
                     if (OraConn.State.ToString() == "Open")
                     {
-                        MessageBox.Show("Connecté");
+                        OraConn.Close();
                     }
                     else
                     {
-                        MessageBox.Show(OraConn.State.ToString());
+                        OraConn.Open();
                     }
+
+                    
+
+                    /* Pas besoin de ce message */
+                    //if (OraConn.State.ToString() == "Open")
+                    //{
+                    //    MessageBox.Show("Connecté");
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show(OraConn.State.ToString());
+                    //}
                 }
                 catch (Exception ex)
                 {
