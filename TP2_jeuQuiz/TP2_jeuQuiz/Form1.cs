@@ -421,7 +421,6 @@ namespace TP2_jeuQuiz
 
         private void RB_Choix1_CheckedChanged(object sender, EventArgs e)
         {
-            bool Win = false;
             // Choix de réponse 1
             if (NumeroBonneReponse == 1)
             {
@@ -466,23 +465,26 @@ namespace TP2_jeuQuiz
 
         private void AddPoint()
         {
-            switch(JoueurQuiJoue)
+            if (RB_Choix1.Enabled)
             {
-                case 1:
-                    ScoreJoueur1++;
-                    break;
-                case 2:
-                    ScoreJoueur2++;
-                    break;
-                case 3:
-                    ScoreJoueur3++;
-                    break;
-                case 4:
-                    ScoreJoueur4++;
-                    break;
-            }
+                switch (JoueurQuiJoue)
+                {
+                    case 1:
+                        ScoreJoueur1++;
+                        break;
+                    case 2:
+                        ScoreJoueur2++;
+                        break;
+                    case 3:
+                        ScoreJoueur3++;
+                        break;
+                    case 4:
+                        ScoreJoueur4++;
+                        break;
+                }
 
-            LBL_Points.Text = (Convert.ToInt32(LBL_Points.Text) + 1).ToString();
+                LBL_Points.Text = (Convert.ToInt32(LBL_Points.Text) + 1).ToString();
+            }
         }
 
         private void BTN_ProchainTour_Click(object sender, EventArgs e)
@@ -521,6 +523,11 @@ namespace TP2_jeuQuiz
             RB_Choix4.Text = "Choix #4";
             BTN_ProchainTour.Enabled = false;
             BTN_PigerUneCouleur.Enabled = true;
+
+            RB_Choix1.Checked = false;
+            RB_Choix2.Checked = false;
+            RB_Choix3.Checked = false;
+            RB_Choix4.Checked = false;
         }
 
         private void LBL_NomJoueurQuiJoue_TextChanged(object sender, EventArgs e)
