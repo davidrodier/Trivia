@@ -147,6 +147,7 @@
             // 
             // GB_SelectionPige
             // 
+            this.GB_SelectionPige.BackColor = System.Drawing.Color.White;
             this.GB_SelectionPige.Controls.Add(this.LBL_Points);
             this.GB_SelectionPige.Controls.Add(this.label1);
             this.GB_SelectionPige.Controls.Add(this.BTN_PigerUneCouleur);
@@ -191,7 +192,7 @@
             // 
             // PNL_CouleurCategorie
             // 
-            this.PNL_CouleurCategorie.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PNL_CouleurCategorie.BackColor = System.Drawing.Color.LightBlue;
             this.PNL_CouleurCategorie.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PNL_CouleurCategorie.Location = new System.Drawing.Point(34, 54);
             this.PNL_CouleurCategorie.Name = "PNL_CouleurCategorie";
@@ -222,6 +223,7 @@
             // 
             // GB_ChoixCat
             // 
+            this.GB_ChoixCat.BackColor = System.Drawing.Color.White;
             this.GB_ChoixCat.Controls.Add(this.LBL_PouvezChoisirVotreCateg);
             this.GB_ChoixCat.Controls.Add(this.RB_ArtCulture);
             this.GB_ChoixCat.Controls.Add(this.RB_Geographie);
@@ -295,6 +297,7 @@
             // 
             // GB_Question
             // 
+            this.GB_Question.BackColor = System.Drawing.Color.White;
             this.GB_Question.Controls.Add(this.LBL_EnonceDeLaQuestion);
             this.GB_Question.Enabled = false;
             this.GB_Question.Location = new System.Drawing.Point(13, 223);
@@ -315,6 +318,7 @@
             // 
             // GB_ChoixDeReponses
             // 
+            this.GB_ChoixDeReponses.BackColor = System.Drawing.Color.White;
             this.GB_ChoixDeReponses.Controls.Add(this.RB_Choix4);
             this.GB_ChoixDeReponses.Controls.Add(this.RB_Choix3);
             this.GB_ChoixDeReponses.Controls.Add(this.RB_Choix2);
@@ -390,6 +394,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(444, 403);
             this.Controls.Add(this.BTN_ProchainTour);
             this.Controls.Add(this.GB_ChoixDeReponses);

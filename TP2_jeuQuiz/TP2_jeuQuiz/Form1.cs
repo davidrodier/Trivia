@@ -365,6 +365,8 @@ namespace TP2_jeuQuiz
 
         private void RB_Sport_CheckedChanged(object sender, EventArgs e)
         {
+            PNL_CouleurCategorie.BackColor = Color.Blue;
+
             RB_Sport.Checked = false;
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
@@ -379,6 +381,8 @@ namespace TP2_jeuQuiz
 
         private void RB_Histoire_CheckedChanged(object sender, EventArgs e)
         {
+            PNL_CouleurCategorie.BackColor = Color.Yellow;
+
             RB_Histoire.Checked = false;
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
@@ -393,6 +397,8 @@ namespace TP2_jeuQuiz
 
         private void RB_Geographie_CheckedChanged(object sender, EventArgs e)
         {
+            PNL_CouleurCategorie.BackColor = Color.Green;
+
             RB_Geographie.Checked = false;
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
@@ -407,6 +413,8 @@ namespace TP2_jeuQuiz
 
         private void RB_ArtCulture_CheckedChanged(object sender, EventArgs e)
         {
+            PNL_CouleurCategorie.BackColor = Color.Red;
+
             RB_ArtCulture.Checked = false;
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
@@ -428,6 +436,8 @@ namespace TP2_jeuQuiz
             }
             GB_ChoixDeReponses.Enabled = false;
             BTN_ProchainTour.Enabled = true;
+
+            SetBackground(1);
         }
 
         private void RB_Choix2_CheckedChanged(object sender, EventArgs e)
@@ -439,6 +449,8 @@ namespace TP2_jeuQuiz
             }
             GB_ChoixDeReponses.Enabled = false;
             BTN_ProchainTour.Enabled = true;
+
+            SetBackground(2);
         }
 
         private void RB_Choix3_CheckedChanged(object sender, EventArgs e)
@@ -450,6 +462,8 @@ namespace TP2_jeuQuiz
             }
             GB_ChoixDeReponses.Enabled = false;
             BTN_ProchainTour.Enabled = true;
+
+            SetBackground(3);
         }
 
         private void RB_Choix4_CheckedChanged(object sender, EventArgs e)
@@ -461,6 +475,42 @@ namespace TP2_jeuQuiz
             }
             GB_ChoixDeReponses.Enabled = false;
             BTN_ProchainTour.Enabled = true;
+
+            SetBackground(4);
+        }
+
+        private void SetBackground(int Nb)
+        {
+            switch(Nb)
+            {
+                case 1:
+                    RB_Choix1.BackColor = Color.LightCoral;
+                    break;
+                case 2:
+                    RB_Choix2.BackColor = Color.LightCoral;
+                    break;
+                case 3:
+                    RB_Choix3.BackColor = Color.LightCoral;
+                    break;
+                case 4:
+                    RB_Choix4.BackColor = Color.LightCoral;
+                    break;
+            }
+            switch(NumeroBonneReponse)
+            {
+                case 1:
+                    RB_Choix1.BackColor = Color.LightGreen;
+                    break;
+                case 2:
+                    RB_Choix2.BackColor = Color.LightGreen;
+                    break;
+                case 3:
+                    RB_Choix3.BackColor = Color.LightGreen;
+                    break;
+                case 4:
+                    RB_Choix4.BackColor = Color.LightGreen;
+                    break;
+            }
         }
 
         private void AddPoint()
@@ -515,7 +565,7 @@ namespace TP2_jeuQuiz
                     break;
             }
             
-            PNL_CouleurCategorie.BackColor = Color.White;
+            PNL_CouleurCategorie.BackColor = Color.LightBlue;
             LBL_EnonceDeLaQuestion.Text = "Insérez une question ici";
             RB_Choix1.Text = "Choix #1";
             RB_Choix2.Text = "Choix #2";
@@ -528,6 +578,11 @@ namespace TP2_jeuQuiz
             RB_Choix2.Checked = false;
             RB_Choix3.Checked = false;
             RB_Choix4.Checked = false;
+
+            RB_Choix1.BackColor = Color.White;
+            RB_Choix2.BackColor = Color.White;
+            RB_Choix3.BackColor = Color.White;
+            RB_Choix4.BackColor = Color.White;
         }
 
         private void LBL_NomJoueurQuiJoue_TextChanged(object sender, EventArgs e)
