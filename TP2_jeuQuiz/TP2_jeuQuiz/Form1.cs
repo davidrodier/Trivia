@@ -153,7 +153,7 @@ namespace TP2_jeuQuiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+             
         }
 
         private void effacerUnJoueurToolStripMenuItem_Click(object sender, EventArgs e)
