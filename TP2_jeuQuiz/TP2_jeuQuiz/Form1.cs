@@ -147,7 +147,7 @@ namespace TP2_jeuQuiz
             orAdater.Fill(MonDataSet, "NumPlusGrand");
             oraSelect.Dispose();
 
-            Administration FenetreAdmin = new Administration(OraConn, Convert.ToInt32(MonDataSet.Tables["NumPlusGrand"].Rows[0].ItemArray.GetValue(0)));
+            Administration FenetreAdmin = new Administration(OraConn, MonDataSet, Convert.ToInt32(MonDataSet.Tables["NumPlusGrand"].Rows[0].ItemArray.GetValue(0)));
             FenetreAdmin.ShowDialog();
         }
 
@@ -329,6 +329,7 @@ namespace TP2_jeuQuiz
 
             LBL_EnonceDeLaQuestion.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(0).ToString();
 
+           // C'est du décalage
             if (tmp == 1)
             {
                 RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
@@ -397,7 +398,7 @@ namespace TP2_jeuQuiz
 
         private void RB_Geographie_CheckedChanged(object sender, EventArgs e)
         {
-            PNL_CouleurCategorie.BackColor = Color.Green;
+            PNL_CouleurCategorie.BackColor = Color.Lime;
 
             RB_Geographie.Checked = false;
             GB_ChoixCat.Enabled = false;
@@ -434,6 +435,8 @@ namespace TP2_jeuQuiz
             {
                 AddPoint();
             }
+           
+
             GB_ChoixDeReponses.Enabled = false;
             BTN_ProchainTour.Enabled = true;
 
@@ -544,26 +547,34 @@ namespace TP2_jeuQuiz
 
         public void NextTurn()
         {
-            JoueurQuiJoue++;
+           if (!(RB_Choix1.Checked && RB_Choix1.BackColor == Color.LightGreen
+              || RB_Choix2.Checked && RB_Choix2.BackColor == Color.LightGreen
+              || RB_Choix3.Checked && RB_Choix3.BackColor == Color.LightGreen
+              || RB_Choix4.Checked && RB_Choix4.BackColor == Color.LightGreen))
+           {
+              JoueurQuiJoue++;
 
-            if(JoueurQuiJoue > NombreJoueurs)
-                JoueurQuiJoue = 1;
+              if (JoueurQuiJoue > NombreJoueurs)
+                 JoueurQuiJoue = 1;
 
-            switch (JoueurQuiJoue)
-            {
-                case 1:
+              switch (JoueurQuiJoue)
+              {
+                 case 1:
                     LBL_NomJoueurQuiJoue.Text = NomJoueur1;
                     break;
-                case 2:
+                 case 2:
                     LBL_NomJoueurQuiJoue.Text = NomJoueur2;
                     break;
-                case 3:
+                 case 3:
                     LBL_NomJoueurQuiJoue.Text = NomJoueur3;
                     break;
-                case 4:
+                 case 4:
                     LBL_NomJoueurQuiJoue.Text = NomJoueur4;
                     break;
-            }
+              }
+           }
+
+
             
             PNL_CouleurCategorie.BackColor = Color.LightBlue;
             LBL_EnonceDeLaQuestion.Text = "Insérez une question ici";
@@ -571,7 +582,7 @@ namespace TP2_jeuQuiz
             RB_Choix2.Text = "Choix #2";
             RB_Choix3.Text = "Choix #3";
             RB_Choix4.Text = "Choix #4";
-            BTN_ProchainTour.Enabled = false;
+            
             BTN_PigerUneCouleur.Enabled = true;
 
             RB_Choix1.Checked = false;
@@ -583,6 +594,9 @@ namespace TP2_jeuQuiz
             RB_Choix2.BackColor = Color.White;
             RB_Choix3.BackColor = Color.White;
             RB_Choix4.BackColor = Color.White;
+
+            BTN_ProchainTour.Enabled = false;
+
         }
 
         private void LBL_NomJoueurQuiJoue_TextChanged(object sender, EventArgs e)
@@ -601,6 +615,58 @@ namespace TP2_jeuQuiz
                 case 4:
                     LBL_Points.Text = ScoreJoueur4.ToString();
                     break;
+            }
+        }
+
+        private void LBL_Points_TextChanged(object sender, EventArgs e)
+        {
+           if (Convert.ToInt32(LBL_Points.Text) >= 12)
+           {
+              MessageBox.Show( LBL_NomJoueurQuiJoue.Text.ToString() + " a gagné.");
+              Application.Exit();
+           }
+        }
+
+        private void PNL_CouleurCategorie_BackColorChanged(object sender, EventArgs e)
+        {
+           
+
+            if (PNL_CouleurCategorie.BackColor == Color.White)
+            {
+                // Faut attendre que la catégorie soit choisie
+               LBL_NomCategorie.ForeColor = Color.Black;
+               LBL_NomCategorie.Text = "Au choix";
+
+            }
+            else if (PNL_CouleurCategorie.BackColor == Color.Blue)
+            {
+                // Couleur bleue, catégorie des sports 
+               LBL_NomCategorie.ForeColor = Color.White;
+               LBL_NomCategorie.Text = "Sports";
+
+            }
+            else if (PNL_CouleurCategorie.BackColor == Color.Yellow)
+            {
+               LBL_NomCategorie.ForeColor = Color.Black;
+                // Couleur Jaune, catég de l'histoire
+               LBL_NomCategorie.Text = "Histoire";
+            }
+            else if (PNL_CouleurCategorie.BackColor == Color.Lime)
+            {
+                // Vert, couleur de la géographie
+               LBL_NomCategorie.ForeColor = Color.Black;
+               LBL_NomCategorie.Text = "Géographie";
+            }
+            else if (PNL_CouleurCategorie.BackColor == Color.Red)
+            {
+               LBL_NomCategorie.ForeColor = Color.White;
+               // Rouge, la couleur de l'art & de la culture
+               LBL_NomCategorie.Text = "Art & Culture";
+            }
+            else
+            {
+               LBL_NomCategorie.ForeColor = Color.Black;
+               LBL_NomCategorie.Text = "";
             }
         }
     }

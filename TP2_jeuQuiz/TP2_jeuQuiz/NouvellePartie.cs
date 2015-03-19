@@ -162,6 +162,9 @@ namespace TP2_jeuQuiz
       private void CB_Reprise_CheckedChanged(object sender, EventArgs e)
       {
           Reprise = CB_Reprise.Checked;
+
+         MessageBox.Show("Fonctionnalité de reprise non implémentée.");
+
       }
    }
 }

@@ -22,6 +22,7 @@ namespace TP2_jeuQuiz
             // Commande qui efface le joueur et ses données à partir de son alias (TB_AliasSupprimer)
             // La procedure devrait faire un message d'erreur si le joueur n'existe pas
 
+           MessageBox.Show("Fonctionnalité de suppression d'un joueur non implémentée.");
         }
 
         private void TB_AliasSupprimer_TextChanged(object sender, EventArgs e)
