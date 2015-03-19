@@ -18,6 +18,7 @@ namespace TP2_jeuQuiz
         public DataSet MonDataSet = new DataSet();
 
         public int NombreJoueurs = 0; // Quand c'est 0, y'a pas de partie en ce moment.
+        public int JoueurQuiJoue = 1;
         public int NumeroBonneReponse = 0;
         public String NomJoueur1 = "";
         public String NomJoueur2 = "";
@@ -116,6 +117,11 @@ namespace TP2_jeuQuiz
 
                 // Aller chercher le nombre de joeurs qu'il y a dans l'autre Form
                 NombreJoueurs = FenetreNouvellePartie.NombreJoueurs;
+
+                NomJoueur1 = FenetreNouvellePartie.NomJoueur1.ToString();
+                NomJoueur2 = FenetreNouvellePartie.NomJoueur2.ToString();
+                NomJoueur3 = FenetreNouvellePartie.NomJoueur3.ToString();
+                NomJoueur4 = FenetreNouvellePartie.NomJoueur4.ToString();
 
             }
 
@@ -415,12 +421,14 @@ namespace TP2_jeuQuiz
 
         private void RB_Choix1_CheckedChanged(object sender, EventArgs e)
         {
+            bool Win = false;
             // Choix de réponse 1
             if (NumeroBonneReponse == 1)
             {
-                MessageBox.Show("Voila");
-                BTN_ProchainTour.Enabled = true;
+                AddPoint();
             }
+            GB_ChoixDeReponses.Enabled = false;
+            BTN_ProchainTour.Enabled = true;
         }
 
         private void RB_Choix2_CheckedChanged(object sender, EventArgs e)
@@ -428,9 +436,10 @@ namespace TP2_jeuQuiz
             // Choix de réponse 2
             if (NumeroBonneReponse == 2)
             {
-                MessageBox.Show("Voila");
-                BTN_ProchainTour.Enabled = true;
+                AddPoint();
             }
+            GB_ChoixDeReponses.Enabled = false;
+            BTN_ProchainTour.Enabled = true;
         }
 
         private void RB_Choix3_CheckedChanged(object sender, EventArgs e)
@@ -438,9 +447,10 @@ namespace TP2_jeuQuiz
             // Choix de réponse 3
             if (NumeroBonneReponse == 3)
             {
-                MessageBox.Show("Voila");
-                BTN_ProchainTour.Enabled = true;
+                AddPoint();
             }
+            GB_ChoixDeReponses.Enabled = false;
+            BTN_ProchainTour.Enabled = true;
         }
 
         private void RB_Choix4_CheckedChanged(object sender, EventArgs e)
@@ -448,14 +458,88 @@ namespace TP2_jeuQuiz
             // Choix de réponse 4
             if (NumeroBonneReponse == 4)
             {
-                MessageBox.Show("Voila");
-                BTN_ProchainTour.Enabled = true;
+                AddPoint();
             }
+            GB_ChoixDeReponses.Enabled = false;
+            BTN_ProchainTour.Enabled = true;
+        }
+
+        private void AddPoint()
+        {
+            switch(JoueurQuiJoue)
+            {
+                case 1:
+                    ScoreJoueur1++;
+                    break;
+                case 2:
+                    ScoreJoueur2++;
+                    break;
+                case 3:
+                    ScoreJoueur3++;
+                    break;
+                case 4:
+                    ScoreJoueur4++;
+                    break;
+            }
+
+            LBL_Points.Text = (Convert.ToInt32(LBL_Points.Text) + 1).ToString();
         }
 
         private void BTN_ProchainTour_Click(object sender, EventArgs e)
         {
+            NextTurn();
+        }
 
+        public void NextTurn()
+        {
+            JoueurQuiJoue++;
+
+            if(JoueurQuiJoue > NombreJoueurs)
+                JoueurQuiJoue = 1;
+
+            switch (JoueurQuiJoue)
+            {
+                case 1:
+                    LBL_NomJoueurQuiJoue.Text = NomJoueur1;
+                    break;
+                case 2:
+                    LBL_NomJoueurQuiJoue.Text = NomJoueur2;
+                    break;
+                case 3:
+                    LBL_NomJoueurQuiJoue.Text = NomJoueur3;
+                    break;
+                case 4:
+                    LBL_NomJoueurQuiJoue.Text = NomJoueur4;
+                    break;
+            }
+            
+            PNL_CouleurCategorie.BackColor = Color.White;
+            LBL_EnonceDeLaQuestion.Text = "Insérez une question ici";
+            RB_Choix1.Text = "Choix #1";
+            RB_Choix2.Text = "Choix #2";
+            RB_Choix3.Text = "Choix #3";
+            RB_Choix4.Text = "Choix #4";
+            BTN_ProchainTour.Enabled = false;
+            BTN_PigerUneCouleur.Enabled = true;
+        }
+
+        private void LBL_NomJoueurQuiJoue_TextChanged(object sender, EventArgs e)
+        {
+            switch (JoueurQuiJoue)
+            {
+                case 1:
+                    LBL_Points.Text = ScoreJoueur1.ToString();
+                    break;
+                case 2:
+                    LBL_Points.Text = ScoreJoueur2.ToString();
+                    break;
+                case 3:
+                    LBL_Points.Text = ScoreJoueur3.ToString();
+                    break;
+                case 4:
+                    LBL_Points.Text = ScoreJoueur4.ToString();
+                    break;
+            }
         }
     }
 }

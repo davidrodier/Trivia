@@ -207,6 +207,7 @@
             this.LBL_NomJoueurQuiJoue.Size = new System.Drawing.Size(43, 13);
             this.LBL_NomJoueurQuiJoue.TabIndex = 1;
             this.LBL_NomJoueurQuiJoue.Text = "Pseudo";
+            this.LBL_NomJoueurQuiJoue.TextChanged += new System.EventHandler(this.LBL_NomJoueurQuiJoue_TextChanged);
             this.LBL_NomJoueurQuiJoue.Click += new System.EventHandler(this.LBL_NumeroJoueurQuiJoue_Click);
             // 
             // LBL_Joueur
