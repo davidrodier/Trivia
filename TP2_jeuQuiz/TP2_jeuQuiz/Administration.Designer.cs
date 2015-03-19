@@ -32,8 +32,6 @@
             this.LBL_MotDePasse = new System.Windows.Forms.Label();
             this.TB_MotDePasse = new System.Windows.Forms.TextBox();
             this.GB_Reponses = new System.Windows.Forms.GroupBox();
-            this.BTN_EffacerReponses = new System.Windows.Forms.Button();
-            this.BTN_RemplacerReponses = new System.Windows.Forms.Button();
             this.BTN_InsererReponse = new System.Windows.Forms.Button();
             this.TB_BonneReponse = new System.Windows.Forms.TextBox();
             this.TB_MauvaiseReponse3 = new System.Windows.Forms.TextBox();
@@ -52,6 +50,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.BTN_EffacerReponses = new System.Windows.Forms.Button();
+            this.BTN_RemplacerReponses = new System.Windows.Forms.Button();
             this.GB_MotDePasse.SuspendLayout();
             this.GB_Reponses.SuspendLayout();
             this.GB_Question.SuspendLayout();
@@ -88,8 +88,6 @@
             // 
             // GB_Reponses
             // 
-            this.GB_Reponses.Controls.Add(this.BTN_EffacerReponses);
-            this.GB_Reponses.Controls.Add(this.BTN_RemplacerReponses);
             this.GB_Reponses.Controls.Add(this.BTN_InsererReponse);
             this.GB_Reponses.Controls.Add(this.TB_BonneReponse);
             this.GB_Reponses.Controls.Add(this.TB_MauvaiseReponse3);
@@ -109,32 +107,10 @@
             this.GB_Reponses.TabStop = false;
             this.GB_Reponses.Text = "Réponses";
             // 
-            // BTN_EffacerReponses
-            // 
-            this.BTN_EffacerReponses.Enabled = false;
-            this.BTN_EffacerReponses.Location = new System.Drawing.Point(316, 71);
-            this.BTN_EffacerReponses.Name = "BTN_EffacerReponses";
-            this.BTN_EffacerReponses.Size = new System.Drawing.Size(75, 23);
-            this.BTN_EffacerReponses.TabIndex = 12;
-            this.BTN_EffacerReponses.Text = "Effacer...";
-            this.BTN_EffacerReponses.UseVisualStyleBackColor = true;
-            this.BTN_EffacerReponses.Click += new System.EventHandler(this.BTN_EffacerReponses_Click);
-            // 
-            // BTN_RemplacerReponses
-            // 
-            this.BTN_RemplacerReponses.Enabled = false;
-            this.BTN_RemplacerReponses.Location = new System.Drawing.Point(224, 71);
-            this.BTN_RemplacerReponses.Name = "BTN_RemplacerReponses";
-            this.BTN_RemplacerReponses.Size = new System.Drawing.Size(75, 23);
-            this.BTN_RemplacerReponses.TabIndex = 11;
-            this.BTN_RemplacerReponses.Text = "Remplacer...";
-            this.BTN_RemplacerReponses.UseVisualStyleBackColor = true;
-            this.BTN_RemplacerReponses.Click += new System.EventHandler(this.BTN_RemplacerReponses_Click);
-            // 
             // BTN_InsererReponse
             // 
             this.BTN_InsererReponse.Enabled = false;
-            this.BTN_InsererReponse.Location = new System.Drawing.Point(130, 71);
+            this.BTN_InsererReponse.Location = new System.Drawing.Point(243, 71);
             this.BTN_InsererReponse.Name = "BTN_InsererReponse";
             this.BTN_InsererReponse.Size = new System.Drawing.Size(75, 23);
             this.BTN_InsererReponse.TabIndex = 10;
@@ -234,6 +210,8 @@
             // 
             // GB_Question
             // 
+            this.GB_Question.Controls.Add(this.BTN_EffacerReponses);
+            this.GB_Question.Controls.Add(this.BTN_RemplacerReponses);
             this.GB_Question.Controls.Add(this.CB_CodeCatégorie);
             this.GB_Question.Controls.Add(this.TB_EnoncerQuestion);
             this.GB_Question.Controls.Add(this.TB_CodeQuestion);
@@ -256,7 +234,7 @@
             "Sport",
             "Géographie",
             "Art et Culture"});
-            this.CB_CodeCatégorie.Location = new System.Drawing.Point(362, 29);
+            this.CB_CodeCatégorie.Location = new System.Drawing.Point(365, 15);
             this.CB_CodeCatégorie.Name = "CB_CodeCatégorie";
             this.CB_CodeCatégorie.Size = new System.Drawing.Size(112, 21);
             this.CB_CodeCatégorie.TabIndex = 11;
@@ -264,7 +242,7 @@
             // 
             // TB_EnoncerQuestion
             // 
-            this.TB_EnoncerQuestion.Location = new System.Drawing.Point(68, 68);
+            this.TB_EnoncerQuestion.Location = new System.Drawing.Point(68, 42);
             this.TB_EnoncerQuestion.MaxLength = 100;
             this.TB_EnoncerQuestion.Name = "TB_EnoncerQuestion";
             this.TB_EnoncerQuestion.Size = new System.Drawing.Size(483, 20);
@@ -274,7 +252,7 @@
             // TB_CodeQuestion
             // 
             this.TB_CodeQuestion.Enabled = false;
-            this.TB_CodeQuestion.Location = new System.Drawing.Point(117, 29);
+            this.TB_CodeQuestion.Location = new System.Drawing.Point(120, 15);
             this.TB_CodeQuestion.MaxLength = 10;
             this.TB_CodeQuestion.Name = "TB_CodeQuestion";
             this.TB_CodeQuestion.Size = new System.Drawing.Size(112, 20);
@@ -283,7 +261,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 71);
+            this.label9.Location = new System.Drawing.Point(10, 45);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 13);
             this.label9.TabIndex = 3;
@@ -292,7 +270,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 32);
+            this.label8.Location = new System.Drawing.Point(36, 18);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 13);
             this.label8.TabIndex = 2;
@@ -301,11 +279,31 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(274, 32);
+            this.label7.Location = new System.Drawing.Point(277, 18);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Code catégorie:";
+            // 
+            // BTN_EffacerReponses
+            // 
+            this.BTN_EffacerReponses.Enabled = false;
+            this.BTN_EffacerReponses.Location = new System.Drawing.Point(284, 68);
+            this.BTN_EffacerReponses.Name = "BTN_EffacerReponses";
+            this.BTN_EffacerReponses.Size = new System.Drawing.Size(75, 23);
+            this.BTN_EffacerReponses.TabIndex = 14;
+            this.BTN_EffacerReponses.Text = "Effacer...";
+            this.BTN_EffacerReponses.UseVisualStyleBackColor = true;
+            // 
+            // BTN_RemplacerReponses
+            // 
+            this.BTN_RemplacerReponses.Enabled = false;
+            this.BTN_RemplacerReponses.Location = new System.Drawing.Point(192, 68);
+            this.BTN_RemplacerReponses.Name = "BTN_RemplacerReponses";
+            this.BTN_RemplacerReponses.Size = new System.Drawing.Size(75, 23);
+            this.BTN_RemplacerReponses.TabIndex = 13;
+            this.BTN_RemplacerReponses.Text = "Remplacer...";
+            this.BTN_RemplacerReponses.UseVisualStyleBackColor = true;
             // 
             // Administration
             // 
@@ -351,9 +349,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button BTN_EffacerReponses;
-        private System.Windows.Forms.Button BTN_RemplacerReponses;
         private System.Windows.Forms.Button BTN_InsererReponse;
         private System.Windows.Forms.ComboBox CB_CodeCatégorie;
+        private System.Windows.Forms.Button BTN_EffacerReponses;
+        private System.Windows.Forms.Button BTN_RemplacerReponses;
     }
 }

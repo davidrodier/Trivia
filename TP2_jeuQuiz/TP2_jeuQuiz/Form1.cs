@@ -141,7 +141,7 @@ namespace TP2_jeuQuiz
             orAdater.Fill(MonDataSet, "NumPlusGrand");
             oraSelect.Dispose();
 
-            Administration FenetreAdmin = new Administration(Convert.ToInt32(MonDataSet.Tables["NumPlusGrand"].Rows[0].ItemArray.GetValue(0)));
+            Administration FenetreAdmin = new Administration(OraConn, Convert.ToInt32(MonDataSet.Tables["NumPlusGrand"].Rows[0].ItemArray.GetValue(0)));
             FenetreAdmin.ShowDialog();
         }
 
