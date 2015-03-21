@@ -669,5 +669,10 @@ namespace TP2_jeuQuiz
                LBL_NomCategorie.Text = "";
             }
         }
+
+        private void LBL_ScoreArtCulture_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
