@@ -158,7 +158,7 @@ namespace TP2_jeuQuiz
 
         private void effacerUnJoueurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EffacerJoueur FenetreEffacerJoueur = new EffacerJoueur();
+            EffacerJoueur FenetreEffacerJoueur = new EffacerJoueur(OraConn, MonDataSet);
             FenetreEffacerJoueur.ShowDialog();
         }
 

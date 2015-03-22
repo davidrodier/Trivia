@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,14 @@ namespace TP2_jeuQuiz
 {
     public partial class EffacerJoueur : Form
     {
-        public EffacerJoueur()
+        private OracleConnection OraConn = new OracleConnection();
+        private DataSet MonDataSet = new DataSet();
+
+        public EffacerJoueur(OracleConnection conn, DataSet dataset)
         {
+            OraConn = conn;
+            MonDataSet = dataset;
+
             InitializeComponent();
         }
 
@@ -22,7 +29,27 @@ namespace TP2_jeuQuiz
             // Commande qui efface le joueur et ses données à partir de son alias (TB_AliasSupprimer)
             // La procedure devrait faire un message d'erreur si le joueur n'existe pas
 
-           MessageBox.Show("Fonctionnalité de suppression d'un joueur non implémentée.");
+           
+
+           try
+           {
+               OracleCommand oraDelete = new OracleCommand("GESTIONJEU", OraConn);
+               oraDelete.CommandText = "GESTIONJEU.DELETEJOUEUR";
+               oraDelete.CommandType = CommandType.StoredProcedure;
+
+               OracleParameter oraCode = new OracleParameter("IN_PSEUDO", OracleDbType.Varchar2);
+               oraCode.Direction = ParameterDirection.Input;
+               oraCode.Value = TB_AliasSupprimer.Text;
+               oraDelete.Parameters.Add(oraCode);
+
+               oraDelete.ExecuteNonQuery();
+
+               MessageBox.Show("Le joueur '" + TB_AliasSupprimer.Text.ToString() + "' est effacé."); 
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show( ex.ToString() ); 
+           }
         }
 
         private void TB_AliasSupprimer_TextChanged(object sender, EventArgs e)
