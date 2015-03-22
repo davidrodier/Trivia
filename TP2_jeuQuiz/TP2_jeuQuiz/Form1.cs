@@ -125,10 +125,14 @@ namespace TP2_jeuQuiz
                 NomJoueur3 = FenetreNouvellePartie.NomJoueur3.ToString();
                 NomJoueur4 = FenetreNouvellePartie.NomJoueur4.ToString();
 
+                // Faut pas pouvoir stater une nouvelle partie quand y'en a déjà une de partie
+                nouvellePartieToolStripMenuItem.Enabled = false;
+
+                // C'est tout le temps le joueur 1 qui commence à jouer
+                LBL_NomJoueurQuiJoue.Text = FenetreNouvellePartie.NomJoueur1.ToString();
             }
 
-            // C'est tout le temps le joueur 1 qui commence à jouer
-            LBL_NomJoueurQuiJoue.Text = FenetreNouvellePartie.NomJoueur1.ToString();
+
         }
 
         private void panneauDadministrationToolStripMenuItem_Click(object sender, EventArgs e)
