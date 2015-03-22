@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,14 @@ namespace TP2_jeuQuiz
        public String NomJoueur3 = "";
        public String NomJoueur4 = "";
 
-      public NouvellePartie()
+       private OracleConnection OraConn = new OracleConnection();
+       private DataSet MonDataSet = new DataSet();
+
+       public NouvellePartie(OracleConnection conn, DataSet dataset)
       {
+          OraConn = conn;
+          MonDataSet = dataset;
+
          InitializeComponent();
 
          RB_NJ1.Checked = true;
@@ -133,6 +140,16 @@ namespace TP2_jeuQuiz
           {
               NombreJoueurs = 1;
           }
+
+          // Faut faire les insertion des joueurs dans chaques catégories
+
+
+
+
+
+
+
+
       }
 
       private void TB_AliasJ1_TextChanged(object sender, EventArgs e)
