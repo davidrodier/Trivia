@@ -29,6 +29,7 @@ namespace TP2_jeuQuiz
         public int[] ScoreJoueur2 = { 0, 0, 0, 0 };
         public int[] ScoreJoueur3 = { 0, 0, 0, 0 };
         public int[] ScoreJoueur4 = { 0, 0, 0, 0 };
+        public const int SCOREPARCATPOURFINIR = 3;
 
         public Form1()
         {
@@ -621,6 +622,19 @@ namespace TP2_jeuQuiz
 
         private void BTN_ProchainTour_Click(object sender, EventArgs e)
         {
+            // On fait ça ici pour faire sûr que le bug est réparé
+            if (Convert.ToInt32(LBL_ScoreSport.Text) >= SCOREPARCATPOURFINIR
+                && Convert.ToInt32(LBL_ScoreHistoire.Text) >= SCOREPARCATPOURFINIR
+                && Convert.ToInt32(LBL_ScoreGeographie.Text) >= SCOREPARCATPOURFINIR
+                && Convert.ToInt32(LBL_ScoreArtCulture.Text) >= SCOREPARCATPOURFINIR)
+            {
+                MessageBox.Show(LBL_NomJoueurQuiJoue.Text.ToString() + " a gagné.");
+                Application.Exit();
+            }
+
+
+
+
             NextTurn();
         }
 
@@ -715,14 +729,14 @@ namespace TP2_jeuQuiz
 
         private void LBL_Points_TextChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(LBL_ScoreSport.Text) >= 3
-                && Convert.ToInt32(LBL_ScoreHistoire.Text) >= 3
-                && Convert.ToInt32(LBL_ScoreGeographie.Text) >= 3
-                && Convert.ToInt32(LBL_ScoreArtCulture.Text) >= 3)
-           {
-              MessageBox.Show( LBL_NomJoueurQuiJoue.Text.ToString() + " a gagné.");
-              Application.Exit();
-           }
+            // if (Convert.ToInt32(LBL_ScoreSport.Text) >= SCOREPARCATPOURFINIR
+            //     && Convert.ToInt32(LBL_ScoreHistoire.Text) >= SCOREPARCATPOURFINIR
+            //     && Convert.ToInt32(LBL_ScoreGeographie.Text) >= SCOREPARCATPOURFINIR
+            //     && Convert.ToInt32(LBL_ScoreArtCulture.Text) >= SCOREPARCATPOURFINIR)
+           //{
+           //   MessageBox.Show( LBL_NomJoueurQuiJoue.Text.ToString() + " a gagné.");
+           //   Application.Exit();
+           //}
         }
 
         private void PNL_CouleurCategorie_BackColorChanged(object sender, EventArgs e)
@@ -769,6 +783,16 @@ namespace TP2_jeuQuiz
         }
 
         private void LBL_ScoreArtCulture_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBL_Points_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBL_ScoreSport_Click(object sender, EventArgs e)
         {
 
         }

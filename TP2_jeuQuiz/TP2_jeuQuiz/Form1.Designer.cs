@@ -254,6 +254,7 @@
             this.LBL_ScoreSport.Size = new System.Drawing.Size(13, 13);
             this.LBL_ScoreSport.TabIndex = 7;
             this.LBL_ScoreSport.Text = "0";
+            this.LBL_ScoreSport.Click += new System.EventHandler(this.LBL_ScoreSport_Click);
             // 
             // label2
             // 
@@ -274,6 +275,7 @@
             this.LBL_Points.TabIndex = 5;
             this.LBL_Points.Text = "Points";
             this.LBL_Points.TextChanged += new System.EventHandler(this.LBL_Points_TextChanged);
+            this.LBL_Points.Click += new System.EventHandler(this.LBL_Points_Click);
             // 
             // label1
             // 
