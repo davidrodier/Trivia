@@ -715,7 +715,10 @@ namespace TP2_jeuQuiz
 
         private void LBL_Points_TextChanged(object sender, EventArgs e)
         {
-           if (Convert.ToInt32(LBL_Points.Text) >= 12)
+            if (Convert.ToInt32(LBL_ScoreSport.Text) >= 3
+                && Convert.ToInt32(LBL_ScoreHistoire.Text) >= 3
+                && Convert.ToInt32(LBL_ScoreGeographie.Text) >= 3
+                && Convert.ToInt32(LBL_ScoreArtCulture.Text) >= 3)
            {
               MessageBox.Show( LBL_NomJoueurQuiJoue.Text.ToString() + " a gagné.");
               Application.Exit();

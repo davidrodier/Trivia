@@ -261,7 +261,7 @@ namespace TP2_jeuQuiz
       {
           Reprise = CB_Reprise.Checked;
 
-         MessageBox.Show("Fonctionnalité de reprise non implémentée.");
+         //MessageBox.Show("Fonctionnalité de reprise non implémentée.");
 
       }
    }
