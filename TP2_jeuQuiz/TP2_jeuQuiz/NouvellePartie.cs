@@ -143,7 +143,88 @@ namespace TP2_jeuQuiz
 
           // Faut faire les insertion des joueurs dans chaques catégories
 
+          if (CB_Reprise.Checked == false)
+          { 
+                // On efface les joueurs et leur scores
+              int i = 1;
+              if (RB_NJ2.Checked == true)
+              {
+                  i++;
+              }
+              if (RB_NJ3.Checked == true)
+              {
+                  i++;
+              }
+              if (RB_NJ4.Checked == true)
+              {
+                  i++;
+              }
 
+              try
+              {
+                  if (i >= 1)
+                  {
+                      OracleCommand oraDelete = new OracleCommand("GESTIONJEU", OraConn);
+                      oraDelete.CommandText = "GESTIONJEU.DELETEJOUEUR";
+                      oraDelete.CommandType = CommandType.StoredProcedure;
+
+                      OracleParameter oraCode = new OracleParameter("IN_PSEUDO", OracleDbType.Varchar2);
+                      oraCode.Direction = ParameterDirection.Input;
+                      oraCode.Value = TB_AliasJ1.Text;
+                      oraDelete.Parameters.Add(oraCode);
+
+                      oraDelete.ExecuteNonQuery();
+                  }
+                  if (i >= 2)
+                  {
+                      OracleCommand oraDelete = new OracleCommand("GESTIONJEU", OraConn);
+                      oraDelete.CommandText = "GESTIONJEU.DELETEJOUEUR";
+                      oraDelete.CommandType = CommandType.StoredProcedure;
+
+                      OracleParameter oraCode = new OracleParameter("IN_PSEUDO", OracleDbType.Varchar2);
+                      oraCode.Direction = ParameterDirection.Input;
+                      oraCode.Value = TB_AliasJ2.Text;
+                      oraDelete.Parameters.Add(oraCode);
+
+                      oraDelete.ExecuteNonQuery();
+                  }
+                  if (i >= 3)
+                  {
+                      OracleCommand oraDelete = new OracleCommand("GESTIONJEU", OraConn);
+                      oraDelete.CommandText = "GESTIONJEU.DELETEJOUEUR";
+                      oraDelete.CommandType = CommandType.StoredProcedure;
+
+                      OracleParameter oraCode = new OracleParameter("IN_PSEUDO", OracleDbType.Varchar2);
+                      oraCode.Direction = ParameterDirection.Input;
+                      oraCode.Value = TB_AliasJ3.Text;
+                      oraDelete.Parameters.Add(oraCode);
+
+                      oraDelete.ExecuteNonQuery();
+                  }
+                  if (i >= 4)
+                  {
+                      OracleCommand oraDelete = new OracleCommand("GESTIONJEU", OraConn);
+                      oraDelete.CommandText = "GESTIONJEU.DELETEJOUEUR";
+                      oraDelete.CommandType = CommandType.StoredProcedure;
+
+                      OracleParameter oraCode = new OracleParameter("IN_PSEUDO", OracleDbType.Varchar2);
+                      oraCode.Direction = ParameterDirection.Input;
+                      oraCode.Value = TB_AliasJ4.Text;
+                      oraDelete.Parameters.Add(oraCode);
+
+                      oraDelete.ExecuteNonQuery();
+                  }
+              }
+              catch (Exception ex)
+              {
+                  MessageBox.Show(ex.ToString());
+              }
+
+              // C'est clean!
+          }
+
+          // On fait les insertions...
+          // Ça va ce faire si les joueurs sont pas déjà là.
 
 
 
