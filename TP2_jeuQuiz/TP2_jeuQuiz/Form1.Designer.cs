@@ -39,6 +39,10 @@
             this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GB_SelectionPige = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.LBL_ScoreArtCulture = new System.Windows.Forms.Label();
             this.LBL_ScoreGeographie = new System.Windows.Forms.Label();
             this.LBL_ScoreHistoire = new System.Windows.Forms.Label();
@@ -65,10 +69,6 @@
             this.RB_Choix2 = new System.Windows.Forms.RadioButton();
             this.RB_Choix1 = new System.Windows.Forms.RadioButton();
             this.BTN_ProchainTour = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.GB_SelectionPige.SuspendLayout();
             this.PNL_CouleurCategorie.SuspendLayout();
@@ -182,6 +182,42 @@
             this.GB_SelectionPige.TabStop = false;
             this.GB_SelectionPige.Text = "Sélectionneur";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(145, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "A: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(145, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(21, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "G: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(145, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(21, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "H: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(145, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "S: ";
+            // 
             // LBL_ScoreArtCulture
             // 
             this.LBL_ScoreArtCulture.AutoSize = true;
@@ -271,12 +307,12 @@
             // 
             // LBL_NomCategorie
             // 
-            this.LBL_NomCategorie.AutoSize = true;
-            this.LBL_NomCategorie.Location = new System.Drawing.Point(45, 34);
+            this.LBL_NomCategorie.Location = new System.Drawing.Point(3, 31);
             this.LBL_NomCategorie.Name = "LBL_NomCategorie";
-            this.LBL_NomCategorie.Size = new System.Drawing.Size(10, 13);
+            this.LBL_NomCategorie.Size = new System.Drawing.Size(113, 20);
             this.LBL_NomCategorie.TabIndex = 0;
             this.LBL_NomCategorie.Text = " ";
+            this.LBL_NomCategorie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LBL_NomJoueurQuiJoue
             // 
@@ -469,42 +505,6 @@
             this.BTN_ProchainTour.UseVisualStyleBackColor = true;
             this.BTN_ProchainTour.Click += new System.EventHandler(this.BTN_ProchainTour_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(145, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "A: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(145, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "G: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(145, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "H: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(145, 71);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "S: ";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,7 +529,6 @@
             this.GB_SelectionPige.ResumeLayout(false);
             this.GB_SelectionPige.PerformLayout();
             this.PNL_CouleurCategorie.ResumeLayout(false);
-            this.PNL_CouleurCategorie.PerformLayout();
             this.GB_ChoixCat.ResumeLayout(false);
             this.GB_ChoixCat.PerformLayout();
             this.GB_Question.ResumeLayout(false);

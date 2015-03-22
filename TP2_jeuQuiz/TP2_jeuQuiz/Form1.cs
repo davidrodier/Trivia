@@ -94,7 +94,7 @@ namespace TP2_jeuQuiz
 
         private void nouvellePartieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NouvellePartie FenetreNouvellePartie = new NouvellePartie();
+            NouvellePartie FenetreNouvellePartie = new NouvellePartie(OraConn, MonDataSet);
 
             if (FenetreNouvellePartie.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -377,6 +377,7 @@ namespace TP2_jeuQuiz
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
             GB_ChoixCat.Hide();
+            Category = "SPR";
             GetQuestionCategory("SPR");
 
             GB_ChoixDeReponses.Enabled = true;
@@ -393,6 +394,7 @@ namespace TP2_jeuQuiz
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
             GB_ChoixCat.Hide();
+            Category = "HIS";
             GetQuestionCategory("HIS");
 
             GB_ChoixDeReponses.Enabled = true;
@@ -409,6 +411,7 @@ namespace TP2_jeuQuiz
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
             GB_ChoixCat.Hide();
+            Category = "GEO";
             GetQuestionCategory("GEO");
 
             GB_ChoixDeReponses.Enabled = true;
@@ -425,6 +428,7 @@ namespace TP2_jeuQuiz
             GB_ChoixCat.Enabled = false;
             Thread.Sleep(250);
             GB_ChoixCat.Hide();
+            Category = "ART";
             GetQuestionCategory("ART");
 
             GB_ChoixDeReponses.Enabled = true;
