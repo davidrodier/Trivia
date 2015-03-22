@@ -729,7 +729,7 @@ namespace TP2_jeuQuiz
 
         private void LBL_Points_TextChanged(object sender, EventArgs e)
         {
-            // if (Convert.ToInt32(LBL_ScoreSport.Text) >= SCOREPARCATPOURFINIR
+            // if (Convert.ToInt32(LBL_ScoreSport.Text) >= SCOREPARCATPOURFINIR    
             //     && Convert.ToInt32(LBL_ScoreHistoire.Text) >= SCOREPARCATPOURFINIR
             //     && Convert.ToInt32(LBL_ScoreGeographie.Text) >= SCOREPARCATPOURFINIR
             //     && Convert.ToInt32(LBL_ScoreArtCulture.Text) >= SCOREPARCATPOURFINIR)

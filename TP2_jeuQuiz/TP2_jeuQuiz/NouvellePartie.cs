@@ -142,11 +142,11 @@ namespace TP2_jeuQuiz
           }
 
           // Faut faire les insertion des joueurs dans chaques catégories
-
+          int i = 1;
           if (CB_Reprise.Checked == false)
-          { 
-                // On efface les joueurs et leur scores
-              int i = 1;
+          {
+              // On efface les joueurs et leur scores
+
               if (RB_NJ2.Checked == true)
               {
                   i++;
@@ -222,13 +222,63 @@ namespace TP2_jeuQuiz
 
               // C'est clean!
           }
+          else
+          {
+              // On fait les insertions...
+              // Ça va se faire si les joueurs sont pas déjà là.
 
-          // On fait les insertions...
-          // Ça va ce faire si les joueurs sont pas déjà là.
+              String[] Categories = { "SPR", "HIS", "GEO", "ART" };
 
+              try
+              {
+                  if (i >= 1)
+                  {
+                      //for (int j = 0; j < 4; j++)
+                      //{
 
+                      //    // Le sélect
+                      //    OracleCommand oraSelect = new OracleCommand("GESTIONJEU", OraConn);
+                      //    oraSelect.CommandText = "GESTIONJEU.SELECTSCOREFROMJOUEUR";
+                      //    oraSelect.CommandType = CommandType.StoredProcedure;
 
+                      //    // Le curseur
+                      //    OracleParameter oraCursor = new OracleParameter("RESULTAT", OracleDbType.RefCursor);
+                      //    oraCursor.Direction = ParameterDirection.ReturnValue;
+                      //    oraSelect.Parameters.Add(oraCursor);
 
+                      //    // Catégorie
+                      //    OracleParameter oraCat = new OracleParameter("CATEGORIE", OracleDbType.Char, 3);
+                      //    oraCat.Direction = ParameterDirection.Input;
+                      //    oraCat.Value = Categories[j]; // On incrémente la catégorie à chaques fois
+                      //    oraSelect.Parameters.Add(oraCat);
+
+                      //    OracleDataAdapter orAdater = new OracleDataAdapter(oraSelect);
+                      //    if (MonDataSet.Tables.Contains("Score"))
+                      //    {
+                      //        MonDataSet.Tables["Score"].Clear();
+                      //    }
+                      //    orAdater.Fill(MonDataSet, "Score");
+                      //    oraSelect.Dispose();
+                      //}
+                  }
+                  if (i >= 2)
+                  {
+
+                  }
+                  if (i >= 3)
+                  {
+
+                  }
+                  if (i >= 4)
+                  {
+
+                  }
+              }
+              catch (Exception ex)
+              {
+                  MessageBox.Show(ex.ToString());
+              }
+          }
 
 
       }
