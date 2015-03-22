@@ -44,7 +44,7 @@ namespace TP2_jeuQuiz
 
                oraDelete.ExecuteNonQuery();
 
-               MessageBox.Show("Le joueur '" + TB_AliasSupprimer.Text.ToString() + "' est effacé."); 
+               MessageBox.Show("Un joueur portant le nom '" + TB_AliasSupprimer.Text.ToString() + "' a du être effacé."); 
            }
            catch (Exception ex)
            {
