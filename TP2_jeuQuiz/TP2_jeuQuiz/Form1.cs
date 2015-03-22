@@ -24,10 +24,11 @@ namespace TP2_jeuQuiz
         public String NomJoueur2 = "";
         public String NomJoueur3 = "";
         public String NomJoueur4 = "";
-        public int ScoreJoueur1 = 0;
-        public int ScoreJoueur2 = 0;
-        public int ScoreJoueur3 = 0;
-        public int ScoreJoueur4 = 0;
+        public String Category;
+        public int[] ScoreJoueur1 = { 0, 0, 0, 0 };
+        public int[] ScoreJoueur2 = { 0, 0, 0, 0 };
+        public int[] ScoreJoueur3 = { 0, 0, 0, 0 };
+        public int[] ScoreJoueur4 = { 0, 0, 0, 0 };
 
         public Form1()
         {
@@ -277,6 +278,7 @@ namespace TP2_jeuQuiz
                 // Couleur bleue, catégorie des sports 
 
                 GetQuestionCategory("SPR");
+                Category = "SPR";
 
                 GB_ChoixDeReponses.Enabled = true;
                 GB_Question.Enabled = true;
@@ -287,6 +289,7 @@ namespace TP2_jeuQuiz
                 // Couleur Jaune, catég de l'histoire
 
                 GetQuestionCategory("HIS");
+                Category = "HIS";
 
                 GB_ChoixDeReponses.Enabled = true;
                 GB_Question.Enabled = true;
@@ -296,6 +299,7 @@ namespace TP2_jeuQuiz
                 // Vert, couleur de la géographie
 
                 GetQuestionCategory("GEO");
+                Category = "GEO";
 
                 GB_ChoixDeReponses.Enabled = true;
                 GB_Question.Enabled = true;
@@ -305,6 +309,7 @@ namespace TP2_jeuQuiz
                 // Rouge, la couleur de l'art & de la culture
 
                 GetQuestionCategory("ART");
+                Category = "ART";
 
                 GB_ChoixDeReponses.Enabled = true;
                 GB_Question.Enabled = true;
@@ -523,20 +528,90 @@ namespace TP2_jeuQuiz
                 switch (JoueurQuiJoue)
                 {
                     case 1:
-                        ScoreJoueur1++;
+                        if (Category == "SPR")
+                        {
+                            ScoreJoueur1[0]++;
+                        }
+                        else if (Category == "HIS")
+                        {
+                            ScoreJoueur1[1]++;
+                        }
+                        else if (Category == "GEO")
+                        {
+                            ScoreJoueur1[2]++;
+                        }
+                        else if (Category == "ART")
+                        {
+                            ScoreJoueur1[3]++;
+                        }
+
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur2;
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur1;
                         break;
                     case 2:
-                        ScoreJoueur2++;
+                        if (Category == "SPR")
+                        {
+                            ScoreJoueur2[0]++;
+                        }
+                        else if (Category == "HIS")
+                        {
+                            ScoreJoueur2[1]++;
+                        }
+                        else if (Category == "GEO")
+                        {
+                            ScoreJoueur2[2]++;
+                        }
+                        else if (Category == "ART")
+                        {
+                            ScoreJoueur2[3]++;
+                        }
+
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur1;
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur2;
                         break;
                     case 3:
-                        ScoreJoueur3++;
+                        if (Category == "SPR")
+                        {
+                            ScoreJoueur3[0]++;
+                        }
+                        else if (Category == "HIS")
+                        {
+                            ScoreJoueur3[1]++;
+                        }
+                        else if (Category == "GEO")
+                        {
+                            ScoreJoueur3[2]++;
+                        }
+                        else if (Category == "ART")
+                        {
+                            ScoreJoueur3[3]++;
+                        }
+
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur1;
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur3;
                         break;
                     case 4:
-                        ScoreJoueur4++;
+                        if (Category == "SPR")
+                        {
+                            ScoreJoueur4[0]++;
+                        }
+                        else if (Category == "HIS")
+                        {
+                            ScoreJoueur4[1]++;
+                        }
+                        else if (Category == "GEO")
+                        {
+                            ScoreJoueur4[2]++;
+                        }
+                        else if (Category == "ART")
+                        {
+                            ScoreJoueur4[3]++;
+                        }
+
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur1;
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur4;
                         break;
                 }
-
-                LBL_Points.Text = (Convert.ToInt32(LBL_Points.Text) + 1).ToString();
             }
         }
 
@@ -604,16 +679,32 @@ namespace TP2_jeuQuiz
             switch (JoueurQuiJoue)
             {
                 case 1:
-                    LBL_Points.Text = ScoreJoueur1.ToString();
+                    LBL_Points.Text = (ScoreJoueur1[0] + ScoreJoueur1[1] + ScoreJoueur1[2] + ScoreJoueur1[3]).ToString();
+                    LBL_ScoreSport.Text = ScoreJoueur1[0].ToString();
+                    LBL_ScoreHistoire.Text = ScoreJoueur1[1].ToString();
+                    LBL_ScoreGeographie.Text = ScoreJoueur1[2].ToString();
+                    LBL_ScoreArtCulture.Text = ScoreJoueur1[3].ToString();
                     break;
                 case 2:
-                    LBL_Points.Text = ScoreJoueur2.ToString();
+                    LBL_Points.Text = (ScoreJoueur2[0] + ScoreJoueur2[1] + ScoreJoueur2[2] + ScoreJoueur2[3]).ToString();
+                    LBL_ScoreSport.Text = ScoreJoueur2[0].ToString();
+                    LBL_ScoreHistoire.Text = ScoreJoueur2[1].ToString();
+                    LBL_ScoreGeographie.Text = ScoreJoueur2[2].ToString();
+                    LBL_ScoreArtCulture.Text = ScoreJoueur2[3].ToString();
                     break;
                 case 3:
-                    LBL_Points.Text = ScoreJoueur3.ToString();
+                    LBL_Points.Text = (ScoreJoueur3[0] + ScoreJoueur3[1] + ScoreJoueur3[2] + ScoreJoueur3[3]).ToString();
+                    LBL_ScoreSport.Text = ScoreJoueur3[0].ToString();
+                    LBL_ScoreHistoire.Text = ScoreJoueur3[1].ToString();
+                    LBL_ScoreGeographie.Text = ScoreJoueur3[2].ToString();
+                    LBL_ScoreArtCulture.Text = ScoreJoueur3[3].ToString();
                     break;
                 case 4:
-                    LBL_Points.Text = ScoreJoueur4.ToString();
+                    LBL_Points.Text = (ScoreJoueur4[0] + ScoreJoueur4[1] + ScoreJoueur4[2] + ScoreJoueur4[3]).ToString();
+                    LBL_ScoreSport.Text = ScoreJoueur4[0].ToString();
+                    LBL_ScoreHistoire.Text = ScoreJoueur4[1].ToString();
+                    LBL_ScoreGeographie.Text = ScoreJoueur4[2].ToString();
+                    LBL_ScoreArtCulture.Text = ScoreJoueur4[3].ToString();
                     break;
             }
         }

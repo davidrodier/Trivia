@@ -39,6 +39,11 @@
             this.àProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GB_SelectionPige = new System.Windows.Forms.GroupBox();
+            this.LBL_ScoreArtCulture = new System.Windows.Forms.Label();
+            this.LBL_ScoreGeographie = new System.Windows.Forms.Label();
+            this.LBL_ScoreHistoire = new System.Windows.Forms.Label();
+            this.LBL_ScoreSport = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.LBL_Points = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BTN_PigerUneCouleur = new System.Windows.Forms.Button();
@@ -60,11 +65,10 @@
             this.RB_Choix2 = new System.Windows.Forms.RadioButton();
             this.RB_Choix1 = new System.Windows.Forms.RadioButton();
             this.BTN_ProchainTour = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LBL_ScoreSport = new System.Windows.Forms.Label();
-            this.LBL_ScoreHistoire = new System.Windows.Forms.Label();
-            this.LBL_ScoreGeographie = new System.Windows.Forms.Label();
-            this.LBL_ScoreArtCulture = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.GB_SelectionPige.SuspendLayout();
             this.PNL_CouleurCategorie.SuspendLayout();
@@ -155,6 +159,10 @@
             // GB_SelectionPige
             // 
             this.GB_SelectionPige.BackColor = System.Drawing.Color.White;
+            this.GB_SelectionPige.Controls.Add(this.label3);
+            this.GB_SelectionPige.Controls.Add(this.label4);
+            this.GB_SelectionPige.Controls.Add(this.label5);
+            this.GB_SelectionPige.Controls.Add(this.label6);
             this.GB_SelectionPige.Controls.Add(this.LBL_ScoreArtCulture);
             this.GB_SelectionPige.Controls.Add(this.LBL_ScoreGeographie);
             this.GB_SelectionPige.Controls.Add(this.LBL_ScoreHistoire);
@@ -173,6 +181,53 @@
             this.GB_SelectionPige.TabIndex = 1;
             this.GB_SelectionPige.TabStop = false;
             this.GB_SelectionPige.Text = "Sélectionneur";
+            // 
+            // LBL_ScoreArtCulture
+            // 
+            this.LBL_ScoreArtCulture.AutoSize = true;
+            this.LBL_ScoreArtCulture.Location = new System.Drawing.Point(165, 110);
+            this.LBL_ScoreArtCulture.Name = "LBL_ScoreArtCulture";
+            this.LBL_ScoreArtCulture.Size = new System.Drawing.Size(13, 13);
+            this.LBL_ScoreArtCulture.TabIndex = 10;
+            this.LBL_ScoreArtCulture.Text = "0";
+            this.LBL_ScoreArtCulture.Click += new System.EventHandler(this.LBL_ScoreArtCulture_Click);
+            // 
+            // LBL_ScoreGeographie
+            // 
+            this.LBL_ScoreGeographie.AutoSize = true;
+            this.LBL_ScoreGeographie.Location = new System.Drawing.Point(165, 97);
+            this.LBL_ScoreGeographie.Name = "LBL_ScoreGeographie";
+            this.LBL_ScoreGeographie.Size = new System.Drawing.Size(13, 13);
+            this.LBL_ScoreGeographie.TabIndex = 9;
+            this.LBL_ScoreGeographie.Text = "0";
+            // 
+            // LBL_ScoreHistoire
+            // 
+            this.LBL_ScoreHistoire.AutoSize = true;
+            this.LBL_ScoreHistoire.Location = new System.Drawing.Point(165, 84);
+            this.LBL_ScoreHistoire.Name = "LBL_ScoreHistoire";
+            this.LBL_ScoreHistoire.Size = new System.Drawing.Size(13, 13);
+            this.LBL_ScoreHistoire.TabIndex = 8;
+            this.LBL_ScoreHistoire.Text = "0";
+            // 
+            // LBL_ScoreSport
+            // 
+            this.LBL_ScoreSport.AutoSize = true;
+            this.LBL_ScoreSport.Location = new System.Drawing.Point(165, 71);
+            this.LBL_ScoreSport.Name = "LBL_ScoreSport";
+            this.LBL_ScoreSport.Size = new System.Drawing.Size(13, 13);
+            this.LBL_ScoreSport.TabIndex = 7;
+            this.LBL_ScoreSport.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(143, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Scores";
             // 
             // LBL_Points
             // 
@@ -414,52 +469,41 @@
             this.BTN_ProchainTour.UseVisualStyleBackColor = true;
             this.BTN_ProchainTour.Click += new System.EventHandler(this.BTN_ProchainTour_Click);
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(143, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Scores";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(145, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "A: ";
             // 
-            // LBL_ScoreSport
+            // label4
             // 
-            this.LBL_ScoreSport.AutoSize = true;
-            this.LBL_ScoreSport.Location = new System.Drawing.Point(143, 71);
-            this.LBL_ScoreSport.Name = "LBL_ScoreSport";
-            this.LBL_ScoreSport.Size = new System.Drawing.Size(20, 13);
-            this.LBL_ScoreSport.TabIndex = 7;
-            this.LBL_ScoreSport.Text = "S: ";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(145, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(21, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "G: ";
             // 
-            // LBL_ScoreHistoire
+            // label5
             // 
-            this.LBL_ScoreHistoire.AutoSize = true;
-            this.LBL_ScoreHistoire.Location = new System.Drawing.Point(143, 84);
-            this.LBL_ScoreHistoire.Name = "LBL_ScoreHistoire";
-            this.LBL_ScoreHistoire.Size = new System.Drawing.Size(21, 13);
-            this.LBL_ScoreHistoire.TabIndex = 8;
-            this.LBL_ScoreHistoire.Text = "H: ";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(145, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(21, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "H: ";
             // 
-            // LBL_ScoreGeographie
+            // label6
             // 
-            this.LBL_ScoreGeographie.AutoSize = true;
-            this.LBL_ScoreGeographie.Location = new System.Drawing.Point(143, 97);
-            this.LBL_ScoreGeographie.Name = "LBL_ScoreGeographie";
-            this.LBL_ScoreGeographie.Size = new System.Drawing.Size(21, 13);
-            this.LBL_ScoreGeographie.TabIndex = 9;
-            this.LBL_ScoreGeographie.Text = "G: ";
-            // 
-            // LBL_ScoreArtCulture
-            // 
-            this.LBL_ScoreArtCulture.AutoSize = true;
-            this.LBL_ScoreArtCulture.Location = new System.Drawing.Point(143, 110);
-            this.LBL_ScoreArtCulture.Name = "LBL_ScoreArtCulture";
-            this.LBL_ScoreArtCulture.Size = new System.Drawing.Size(20, 13);
-            this.LBL_ScoreArtCulture.TabIndex = 10;
-            this.LBL_ScoreArtCulture.Text = "A: ";
-            this.LBL_ScoreArtCulture.Click += new System.EventHandler(this.LBL_ScoreArtCulture_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(145, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "S: ";
             // 
             // Form1
             // 
@@ -535,6 +579,10 @@
       private System.Windows.Forms.Label LBL_ScoreHistoire;
       private System.Windows.Forms.Label LBL_ScoreSport;
       private System.Windows.Forms.Label label2;
+      private System.Windows.Forms.Label label3;
+      private System.Windows.Forms.Label label4;
+      private System.Windows.Forms.Label label5;
+      private System.Windows.Forms.Label label6;
    }
 }
 
