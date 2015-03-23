@@ -55,6 +55,12 @@ namespace TP2_jeuQuiz
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+
+            OracleCommand oraReset = new OracleCommand("GESTIONJEU", OraConn);
+            oraReset.CommandText = "GESTIONJEU.RESETGAME";
+            oraReset.CommandType = CommandType.StoredProcedure;
+
+            oraReset.ExecuteNonQuery();
         }
 
         private void àProposToolStripMenuItem_Click(object sender, EventArgs e)
@@ -159,7 +165,7 @@ namespace TP2_jeuQuiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-             
+
         }
 
         private void effacerUnJoueurToolStripMenuItem_Click(object sender, EventArgs e)
@@ -331,47 +337,52 @@ namespace TP2_jeuQuiz
         {
             Random QuestionRdm = new Random();
 
-            int CodeQuestion = QuestionRdm.Next(1, MonDataSet.Tables["Question"].Rows.Count);
+            int CodeQuestion = 0;
 
-            GetQuestionNumero(Convert.ToInt32(MonDataSet.Tables["Question"].Rows[CodeQuestion].ItemArray.GetValue(0)));
+            do
+            {
+                CodeQuestion = QuestionRdm.Next(1, MonDataSet.Tables["Question"].Rows.Count);
 
-            int tmp = QuestionRdm.Next(1, 4);
+                GetQuestionNumero(Convert.ToInt32(MonDataSet.Tables["Question"].Rows[CodeQuestion].ItemArray.GetValue(0)));
 
-            LBL_EnonceDeLaQuestion.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(0).ToString();
+                int tmp = QuestionRdm.Next(1, 4);
 
-           // C'est du décalage
-            if (tmp == 1)
-            {
-                RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
-                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
-                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
-                RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
-                NumeroBonneReponse = 3;
-            }
-            else if (tmp == 2)
-            {
-                RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
-                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
-                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
-                RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
-                NumeroBonneReponse = 4;
-            }
-            else if (tmp == 3)
-            {
-                RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
-                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
-                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
-                RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
-                NumeroBonneReponse = 1;
-            }
-            else if (tmp == 4)
-            {
-                RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
-                RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
-                RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
-                RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
-                NumeroBonneReponse = 2;
-            }
+                LBL_EnonceDeLaQuestion.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(0).ToString();
+
+                // C'est du décalage
+                if (tmp == 1)
+                {
+                    RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
+                    RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
+                    RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                    RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
+                    NumeroBonneReponse = 3;
+                }
+                else if (tmp == 2)
+                {
+                    RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
+                    RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
+                    RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
+                    RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                    NumeroBonneReponse = 4;
+                }
+                else if (tmp == 3)
+                {
+                    RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                    RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
+                    RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
+                    RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
+                    NumeroBonneReponse = 1;
+                }
+                else if (tmp == 4)
+                {
+                    RB_Choix1.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(3).ToString();
+                    RB_Choix2.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(4).ToString();
+                    RB_Choix3.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(2).ToString();
+                    RB_Choix4.Text = MonDataSet.Tables["QuestionSelectionne"].Rows[0].ItemArray.GetValue(1).ToString();
+                    NumeroBonneReponse = 2;
+                }
+            } while (MonDataSet.Tables["Question"].Rows[CodeQuestion].ItemArray.GetValue(2).ToString() != "Y  ");
         }
 
         private void RB_Sport_CheckedChanged(object sender, EventArgs e)
@@ -449,7 +460,7 @@ namespace TP2_jeuQuiz
             {
                 AddPoint();
             }
-           
+
 
             GB_ChoixDeReponses.Enabled = false;
             BTN_ProchainTour.Enabled = true;
@@ -498,7 +509,7 @@ namespace TP2_jeuQuiz
 
         private void SetBackground(int Nb)
         {
-            switch(Nb)
+            switch (Nb)
             {
                 case 1:
                     RB_Choix1.BackColor = Color.LightCoral;
@@ -513,7 +524,7 @@ namespace TP2_jeuQuiz
                     RB_Choix4.BackColor = Color.LightCoral;
                     break;
             }
-            switch(NumeroBonneReponse)
+            switch (NumeroBonneReponse)
             {
                 case 1:
                     RB_Choix1.BackColor = Color.LightGreen;
@@ -644,42 +655,42 @@ namespace TP2_jeuQuiz
 
         public void NextTurn()
         {
-           if (!(RB_Choix1.Checked && RB_Choix1.BackColor == Color.LightGreen
-              || RB_Choix2.Checked && RB_Choix2.BackColor == Color.LightGreen
-              || RB_Choix3.Checked && RB_Choix3.BackColor == Color.LightGreen
-              || RB_Choix4.Checked && RB_Choix4.BackColor == Color.LightGreen))
-           {
-              JoueurQuiJoue++;
+            if (!(RB_Choix1.Checked && RB_Choix1.BackColor == Color.LightGreen
+               || RB_Choix2.Checked && RB_Choix2.BackColor == Color.LightGreen
+               || RB_Choix3.Checked && RB_Choix3.BackColor == Color.LightGreen
+               || RB_Choix4.Checked && RB_Choix4.BackColor == Color.LightGreen))
+            {
+                JoueurQuiJoue++;
 
-              if (JoueurQuiJoue > NombreJoueurs)
-                 JoueurQuiJoue = 1;
+                if (JoueurQuiJoue > NombreJoueurs)
+                    JoueurQuiJoue = 1;
 
-              switch (JoueurQuiJoue)
-              {
-                 case 1:
-                    LBL_NomJoueurQuiJoue.Text = NomJoueur1;
-                    break;
-                 case 2:
-                    LBL_NomJoueurQuiJoue.Text = NomJoueur2;
-                    break;
-                 case 3:
-                    LBL_NomJoueurQuiJoue.Text = NomJoueur3;
-                    break;
-                 case 4:
-                    LBL_NomJoueurQuiJoue.Text = NomJoueur4;
-                    break;
-              }
-           }
+                switch (JoueurQuiJoue)
+                {
+                    case 1:
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur1;
+                        break;
+                    case 2:
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur2;
+                        break;
+                    case 3:
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur3;
+                        break;
+                    case 4:
+                        LBL_NomJoueurQuiJoue.Text = NomJoueur4;
+                        break;
+                }
+            }
 
 
-            
+
             PNL_CouleurCategorie.BackColor = Color.LightBlue;
             LBL_EnonceDeLaQuestion.Text = "Insérez une question ici";
             RB_Choix1.Text = "Choix #1";
             RB_Choix2.Text = "Choix #2";
             RB_Choix3.Text = "Choix #3";
             RB_Choix4.Text = "Choix #4";
-            
+
             BTN_PigerUneCouleur.Enabled = true;
 
             RB_Choix1.Checked = false;
@@ -733,56 +744,49 @@ namespace TP2_jeuQuiz
 
         private void LBL_Points_TextChanged(object sender, EventArgs e)
         {
-            // if (Convert.ToInt32(LBL_ScoreSport.Text) >= SCOREPARCATPOURFINIR    
-            //     && Convert.ToInt32(LBL_ScoreHistoire.Text) >= SCOREPARCATPOURFINIR
-            //     && Convert.ToInt32(LBL_ScoreGeographie.Text) >= SCOREPARCATPOURFINIR
-            //     && Convert.ToInt32(LBL_ScoreArtCulture.Text) >= SCOREPARCATPOURFINIR)
-           //{
-           //   MessageBox.Show( LBL_NomJoueurQuiJoue.Text.ToString() + " a gagné.");
-           //   Application.Exit();
-           //}
+
         }
 
         private void PNL_CouleurCategorie_BackColorChanged(object sender, EventArgs e)
         {
-           
+
 
             if (PNL_CouleurCategorie.BackColor == Color.White)
             {
                 // Faut attendre que la catégorie soit choisie
-               LBL_NomCategorie.ForeColor = Color.Black;
-               LBL_NomCategorie.Text = "Au choix";
+                LBL_NomCategorie.ForeColor = Color.Black;
+                LBL_NomCategorie.Text = "Au choix";
 
             }
             else if (PNL_CouleurCategorie.BackColor == Color.Blue)
             {
                 // Couleur bleue, catégorie des sports 
-               LBL_NomCategorie.ForeColor = Color.White;
-               LBL_NomCategorie.Text = "Sports";
+                LBL_NomCategorie.ForeColor = Color.White;
+                LBL_NomCategorie.Text = "Sports";
 
             }
             else if (PNL_CouleurCategorie.BackColor == Color.Yellow)
             {
-               LBL_NomCategorie.ForeColor = Color.Black;
+                LBL_NomCategorie.ForeColor = Color.Black;
                 // Couleur Jaune, catég de l'histoire
-               LBL_NomCategorie.Text = "Histoire";
+                LBL_NomCategorie.Text = "Histoire";
             }
             else if (PNL_CouleurCategorie.BackColor == Color.Lime)
             {
                 // Vert, couleur de la géographie
-               LBL_NomCategorie.ForeColor = Color.Black;
-               LBL_NomCategorie.Text = "Géographie";
+                LBL_NomCategorie.ForeColor = Color.Black;
+                LBL_NomCategorie.Text = "Géographie";
             }
             else if (PNL_CouleurCategorie.BackColor == Color.Red)
             {
-               LBL_NomCategorie.ForeColor = Color.White;
-               // Rouge, la couleur de l'art & de la culture
-               LBL_NomCategorie.Text = "Art & Culture";
+                LBL_NomCategorie.ForeColor = Color.White;
+                // Rouge, la couleur de l'art & de la culture
+                LBL_NomCategorie.Text = "Art & Culture";
             }
             else
             {
-               LBL_NomCategorie.ForeColor = Color.Black;
-               LBL_NomCategorie.Text = "";
+                LBL_NomCategorie.ForeColor = Color.Black;
+                LBL_NomCategorie.Text = "";
             }
         }
 
